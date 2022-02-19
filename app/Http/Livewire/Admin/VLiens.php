@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\Admin;
 
 use Livewire\Component;
+use App\Models\liens;
 
 class VLiens extends Component
 {

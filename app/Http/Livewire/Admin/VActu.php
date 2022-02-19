@@ -7,11 +7,11 @@ use App\Models\Actu;
 
 class VActu extends Component
 {
-    public $selectedId;
-    public $titre;
-    public $descrip;
-    public $url;
-    public $type;
+    public $selectedId = 3;
+    public $titre="hfhfhf";
+    public $descrip="hfhfhf";
+    public $url="hfhfhf";
+    public $type="hfhfhf";
     public $actus;
 
     public function render()
@@ -20,6 +20,8 @@ class VActu extends Component
         
         return view('livewire.admin.v-actu');
     }
+
+    ## la fonction inserer les donnes à la base de donnée ##
 
     public function create()
     {
@@ -32,9 +34,14 @@ class VActu extends Component
         Actu::create($valider);
     }
 
-    
+    ## la fonction modifier ##
+
     public function update()
     {
+        $this->titre = "gogo";
+        $this->descrip = "glod";
+        $this->url = "gaga";
+        $this->type = "glod";
         $valider = $this->validate([
             'titre'=> 'required',
             'descrip'=> 'required',
@@ -44,6 +51,9 @@ class VActu extends Component
         $record=Actu::find($this->selectedId);
         $record->update($valider);
     }
+
+    ## la fonction supprimer ##
+
     public function delete()
     {
         $valider = $this->validate([

@@ -8,4 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Mediatheque extends Model
 {
     use HasFactory;
+    protected $fillable = ['titre', 'image'];
 }

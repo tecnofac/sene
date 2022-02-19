@@ -8,4 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class apropo extends Model
 {
     use HasFactory;
+    protected $fillable = ['titre', 'description'];
 }
