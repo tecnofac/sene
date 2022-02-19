@@ -6,6 +6,22 @@ use Livewire\Component;
 
 class VProjet extends Component
 {
+    public function add()
+    {
+        
+    }
+
+    public function supprimer()
+    {
+
+    }
+
+    public function modifier()
+    {
+        
+    }
+
+    
     public function render()
     {
         return view('livewire.admin.v-projet');

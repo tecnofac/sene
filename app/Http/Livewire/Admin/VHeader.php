@@ -10,4 +10,21 @@ class VHeader extends Component
     {
         return view('livewire.admin.v-header');
     }
+    public function add()
+    {
+        
+    }
+
+    public function supprimer()
+    {
+
+    }
+
+    public function modifier()
+    {
+        
+    }
+
+    
+    
 }

@@ -6,8 +6,26 @@ use Livewire\Component;
 
 class VContact extends Component
 {
+
     public function render()
     {
         return view('livewire.admin.v-contact');
     }
+    
+    public function add()
+    {
+        
+    }
+
+    public function supprimer()
+    {
+
+    }
+
+    public function modifier()
+    {
+        
+    }
+
+    
 }
