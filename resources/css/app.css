@@ -2,6 +2,7 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
+<<<<<<< HEAD
 /* Importation de Font Awesome */
 @import "~@fortawesome/fontawesome-free/scss/fontawesome";
 
@@ -9,3 +10,9 @@
 @import "~@fortawesome/fontawesome-free/scss/solid";
 @import "~@fortawesome/fontawesome-free/scss/regular";
 @import "~@fortawesome/fontawesome-free/scss/brands";
+=======
+@import '~@fortawesome/fontawesome-free/css/fontawesome';
+@import '~@fortawesome/fontawesome-free/css/regular';
+@import '~@fortawesome/fontawesome-free/css/solid';
+@import '~@fortawesome/fontawesome-free/css/brands';
+>>>>>>> 0dcf5880bc028d82f225c068671e51e5a5ec854b
