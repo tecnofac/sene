@@ -1,12 +1,26 @@
-<div class="fixed-top">
-    <nav class="px-2 bg-primary">
-        <div class="container py-2 text-white nav justify-content-end">
-            jgjgj
+<div class="{{-- fixed-top --}}">
+    <nav class="px-2 navbar navbar-light navbar-expand-lg bg-info">
+        <div class="container text-white nav justify-content-end">
+            <div class="collapse navbar-collapse">
+                <ul class="gap-5 navbar-nav w-100 nav justify-content-start ">
+                    <li class=" nav-item">
+                        <a href="#" class="nav-link active" aria-current="page"><b>SENAREC RDC</b></a>
+                    </li>
+                    <li class=" nav-item">
+                        <a href="#" class="nav-link active" aria-current="page">Adresse: 5, Avenue Lubefu, GOMBE</a>
+                    </li>
+                    <li class=" nav-item">
+                        <a href="#" class="nav-link active" aria-current="page">Appelez-nous (+243) +243(0) 991-068-948</a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </nav>
-    <nav class="px-2 navbar navbar-light navbar-expand-lg " >
-        <div class="container py-2 bg-tr-blue">
-            <a class="navbar-brand" href="#">Navbar</a>
+    <nav class="px-2 bg-white navbar navbar-light navbar-expand-lg" >
+        <div class="container py-4">
+            <a class="navbar-brand" href="#">
+                <img src="{{ asset('img/logo.jpg') }}" alt="" srcset="" style="width:80px">
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="navbarnavDropdown" aria-expanded="false" >
                 <span class="navbar-toggler-icon"></span>
                 SENAREC
