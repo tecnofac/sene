@@ -18,7 +18,7 @@
     </nav>
     <nav class="px-2 bg-white navbar navbar-light navbar-expand-lg" >
         <div class="container py-4">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="{{ route('home') }}">
                 <img src="{{ asset('img/logo.jpg') }}" alt="" srcset="" style="width:80px">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="navbarnavDropdown" aria-expanded="false" >
@@ -28,7 +28,7 @@
             <div class="collapse navbar-collapse" id="menu">
                 <ul class="navbar-nav w-100 nav justify-content-end ">
                     <li class="px-2 nav-item">
-                        <a href="#" class="nav-link active" aria-current="page">Acceuil</a>
+                        <a href="{{ route('home') }}" class="nav-link active" aria-current="page">Acceuil</a>
                     </li>
                     <li class="px-2 nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" id="Md" role="button" data-bs-toggle="dropdown" aria-expanded="false">
