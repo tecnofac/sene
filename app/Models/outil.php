@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class outil extends Model
 {
     use HasFactory;
-    protected $fillable = ['titre', 'sous-titre', 'description'];
+    protected $fillable = ['titre', 'sousTitre', 'description'];
 }
 
 

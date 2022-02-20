@@ -6,11 +6,12 @@
     @endif
     <button class="btn bg-primary p-2" wire:click="create" url="button">Click create</button>
     <div class="">
-        @foreach($reseaux as $ac)
-            <p>{{$ac->url}}- {{$ac->nom}}</p>
+        @foreach($offres as $ac)
+            <p>{{$ac->titre}}- {{$ac->description}}</p>
         @endforeach
         
     </div>
     <button class="btn bg-primary p-2" wire:click="update" url="button">Click update</button>
     <button class="btn bg-primary p-2" wire:click="delete" url="button">Click delete</button>
 </div>
+

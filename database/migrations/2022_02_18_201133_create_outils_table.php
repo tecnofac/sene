@@ -16,7 +16,7 @@ class CreateOutilsTable extends Migration
         Schema::create('outils', function (Blueprint $table) {
             $table->id();
             $table->string('titre');
-            $table->string('sous-titre');
+            $table->string('sousTitre');
             $table->string('description');
             $table->timestamps();
         });

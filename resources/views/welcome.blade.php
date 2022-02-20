@@ -16,7 +16,7 @@
         <livewire:client.nav />
         <hr>
         <div class="container py-5 mt-5">
-            <livewire:admin.v-actu />
+            <livewire:admin.v-message/>
         </div>
         @livewireScripts
     </body>

@@ -7,26 +7,51 @@ use App\Models\Contact;
 
 class VContact extends Component
 {
+    public $selectedId=1;
+    public $type='kkkkk';
+    public $contenu='oooo';
+    public $icon='papa';
+    public $Contacts='0023';
 
     public function render()
     {
+        $this->Contacts=Contact::all();
         return view('livewire.admin.v-contact');
     }
     
-    public function add()
+    public function create()
     {
-        
+        $valider = $this->validate([
+            'type'=> 'required',
+            'contenu'=> 'required',
+            'icon'=>'required',
+        ]);
+        Contact::create($valider);
     }
 
-    public function supprimer()
+    public function update()
     {
-
+        $this->type = "gogo";
+        $this->contenu= "glod";
+        $this->icon = "gaga";
+        $valider = $this->validate([
+            'type'=> 'required',
+            'contenu'=> 'required',
+            'icon'=>'required',
+        ]);
+        $record=Contact::find($this->selectedId);
+        $record->update($valider);
     }
 
-    public function modifier()
+    public function delete()
     {
-        
+        $valider = $this->validate([
+            'type'=> 'required',
+            'contenu'=> 'required',
+            'icon'=>'required',
+        ]);
+        $record = Contact::find($this->selectedId);
+        $record->delete();
     }
-
     
 }

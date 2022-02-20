@@ -7,24 +7,57 @@ use App\Models\reseaux;
 
 class VReseauxSociaux extends Component
 {
-    public function add()
+    public $selectedId;
+    public $nom ='jjjjj';
+    public $utilisateur= 'uuuuuu';
+    public $url='hhhhhh';
+    public $icon='mmmmmmm';
+    public $reseaux;
+
+    public function render()
     {
-        
+        $this->reseaux= reseaux::all();
+        return view('livewire.admin.v-reseaux-sociaux');
     }
-
-    public function supprimer()
+    public function create()
     {
+        $valider = $this->validate([
+            'nom'=> 'required',
+            'utilisateur'=> 'required',
+            'url'=> 'required',
+            'icon'=>'required'
+        ]);
 
-    }
-
-    public function modifier()
-    {
-        
+        reseaux::create($valider);   
     }
 
     
-    public function render()
+    public function update()
     {
-        return view('livewire.admin.v-reseaux-sociaux');
+        $this->nom= "gogo";
+        $this->utilisateur = "glod";
+        $this->url = "gaga";
+        $this->icon='jjjj';
+
+        $valider = $this->validate([
+            'nom'=> 'required',
+            'utilisateur'=> 'required',
+            'url'=> 'required',
+            'icon'=>'required'
+        ]);
+        $record=reseaux::find($this->selectedId);
+        $record->update($valider);
+    }
+    
+    public function delete()
+    {
+        $valider = $this->validate([
+            'nom'=> 'required',
+            'utilisateur'=> 'required',
+            'url'=> 'required',
+            'icon'=>'required'
+        ]);
+        $record=reseaux::find($this->selectedId);
+        $record->delete($valider);
     }
 }

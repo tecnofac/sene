@@ -3,52 +3,57 @@
 namespace App\Http\Livewire\Admin;
 
 use Livewire\Component;
-use App\Models\apropo;
+use App\Models\Offre;
 
-class VApropos extends Component
+class VOffre extends Component
 {
     public $selectedId=1;
     public $titre='kkkk';
     public $description='oooooo';
-    public $apropo='pppppp';
+    public $contacts='pppppp';
+    public $offres;
 
     public function render()
     {
-        $this->apropos=apropo::all();
-        return view('livewire.admin.v-apropos');
+        $this->offres=Offre::all();
+        return view('livewire.admin.v-offre');
     }
-
     public function create()
-    {
-        $valider = $this->validate([
-            'titre'=> 'required',
-            'description'=> 'required', 
-        ]);
-        apropo::create($valider);
-    }
-
+        {
+            $valider = $this->validate([
+                'titre'=>'required',
+                'description'=>'required', 
+                'contacts'=>'required'
+            ]);
+    
+            Offre::create($valider);
+        }
+    
     public function update()
     {
         $this->titre = "gogo";
         $this->description = "glod";
-       
+        $this->contacts = "joe";
+           
         $valider = $this->validate([
             'titre'=> 'required',
             'description'=> 'required',
+            'contacts'=>'required'
         ]);
-
-        $record=apropo::find($this->selectedId);
+    
+        $record=Offre::find($this->selectedId);
         $record->update($valider);
-    }
+        }
+        
     
     public function delete()
     {
         $valider = $this->validate([
             'titre'=> 'required',
             'description'=> 'required',
+            'contacts'=>'required'
         ]);
-        $record = apropo::find($this->selectedId);
+        $record = Offre::find($this->selectedId);
         $record->delete();
     }
-
 }
