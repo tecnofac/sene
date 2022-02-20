@@ -111,7 +111,7 @@
                     <livewire:admin.v-liens />
                 </div>
                 <div class="col-12" x-show="option[6]">
-                    <livewire:admin.v-offres />
+                    <livewire:admin.v-offre />
                 </div>
                 <div class="col-12" x-show="option[7]">
                     <livewire:admin.v-outil/>

@@ -8,4 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class liens extends Model
 {
     use HasFactory;
+    protected $fillable = ['nom', 'url'];
 }

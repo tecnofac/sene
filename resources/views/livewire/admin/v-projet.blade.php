@@ -1,4 +1,4 @@
-<div class="row container">
+<div class="row container pt-2">
     {{-- The whole world belongs to you. --}}
     <div class="col-lg-4 border-end border-secondary-opacity-2">
         <div class="mb-3">
@@ -61,3 +61,7 @@
         </div>
     </div>
 </div>
+
+
+
+

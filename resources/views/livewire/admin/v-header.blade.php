@@ -1,4 +1,4 @@
-<div>
+<div class="container pt-3">
     {{-- Knowing others is intelligence; knowing yourself is true wisdom. --}}
     <div class="row">
         <div class="col-lg-4 border-end border-secondary-opacity-2">
@@ -19,8 +19,8 @@
         </div>
         <div class="col-lg-4 border-end border-secondary-opacity-2">
             <div class="mb-3">
-                <label for="parcourir" class="form-label">Parcourir</label>
-                <input type="file" class="form-control" id="parcourir" aria-describedby="textHelp">
+                <label for="selectionimage" class="form-label">Selection image</label>
+                <input type="file" class="form-control" id="selectionimage" aria-describedby="textHelp">
                 <div class="form-text" id="textHelp">Veillez rechercher l'image ou la video voulu</div>
             </div>
             <div class="mb-3 ms-4">
@@ -37,7 +37,7 @@
         </div>
         <div class="col-lg-4">
             <div class="card ">
-                <h5 class="card-title">Titre</h5>
+                <h5 class="card-title bg-light text-decoration-underline">Titre</h5>
                 <div class="card-body ">
                     <img src="{{asset('img/logo.jpg')}}" alt="img" class="card-img-top border-bottom border-decondary-opacity-2 w-100">
                     <p class="card-text">Lorem aliquid inventore dolorem excepturi quasi nulla officiis oloribus</p>

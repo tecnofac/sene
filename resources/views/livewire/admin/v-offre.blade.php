@@ -1,9 +1,10 @@
-<div class="row container">
+<div class="row container pt-2">
     {{-- The Master doesn't talk, he acts. --}}
     <div class="col-lg-4 border-end border-secondary-opacity-2">
         <div class="mb-3">
             <label for="titre" class="form-label">Titre</label>
-            <input type="text" class="form-control" id="titre" aria-describedby="textHelp" placeholder="Veillez bien saisir votre titre">   
+            <input type="text" class="form-control" id="titre" aria-describedby="textHelp">
+            <div class="form-text" id="textHelp">Veillez bien saisir votre titre</div>   
         </div>
         <div class="mb-3">
             <label for="description" class="form-label">Description</label>
@@ -11,7 +12,8 @@
         </div>
         <div class="mb-3">
             <label for="contact" class="form-label">Contact</label>
-            <input type="text" class="form-control" id="contact" aria-describedby="textHelp" placeholder="Veillez bien saisir votre numero ou email">
+            <input type="text" class="form-control" id="contact" aria-describedby="textHelp">
+            <div class="form-text" id="textHelp">Veillez bien saisir votre numero ou email</div>
         </div>
         <div class="m-3 ps-4">
             <button class="btn btn-primary btn-lg" type="button">Enregistrer</button>

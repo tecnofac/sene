@@ -8,4 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Actu extends Model
 {
     use HasFactory;
+    protected $fillable=['id','titre','descrip','url','type'];
 }
