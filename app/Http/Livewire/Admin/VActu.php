@@ -4,14 +4,18 @@ namespace App\Http\Livewire\Admin;
 
 use Livewire\Component;
 use App\Models\Actu;
+use Illuminate\Support\Facades\Storage;
+use Livewire\WithFileUploads;
 
 class VActu extends Component
 {
-    public $selectedId = 3;
-    public $titre="hfhfhf";
-    public $descrip="hfhfhf";
-    public $url="hfhfhf";
-    public $type="hfhfhf";
+    use WithFileUploads;
+    public $selectedId;
+    public $titre;
+    public $descrip;
+    public $url;
+    public $type;
+    public $photo;
     public $actus;
 
     public function render()
@@ -31,17 +35,35 @@ class VActu extends Component
             'url'=>'required',
             'type'=>'required'
         ]);
-        Actu::create($valider);
+        $record = Actu::create($valider);
+        $this->photo->storeAs('public/actus', $record->id.'.png');
+        $this->clear();
+    }
+
+    public function clear()
+    {
+        $this->titre = "";
+        $this->descrip = "";
+        $this->url = "";
+        $this->type = "";
+        $this->photo = "";
+        $this->selectedId = "";
+    }
+
+    public function selection($data)
+    {
+        $this->selectedId = $data["id"];
+        $this->titre = $data["titre"];;
+        $this->descrip = $data["descrip"];
+        $this->url = $data["url"];;
+        $this->type = $data["type"];
     }
 
     ## la fonction modifier ##
 
     public function update()
     {
-        $this->titre = "gogo";
-        $this->descrip = "glod";
-        $this->url = "gaga";
-        $this->type = "glod";
+        
         $valider = $this->validate([
             'titre'=> 'required',
             'descrip'=> 'required',
@@ -50,6 +72,10 @@ class VActu extends Component
         ]);
         $record=Actu::find($this->selectedId);
         $record->update($valider);
+        if (!empty($this->photo)) {
+            $this->photo->storeAs('public/actus', $this->selectedId.'.png');
+        }
+
     }
 
     ## la fonction supprimer ##
@@ -64,6 +90,7 @@ class VActu extends Component
         ]);
         $record = Actu::find($this->selectedId);
         $record->delete();
+        Storage::delete('public/actus/'.$this->selectedId.'.png');
     }
 
     
