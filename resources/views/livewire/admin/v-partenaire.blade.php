@@ -1,5 +1,5 @@
 
-    <div class="container">
+    <div class="container pt-2">
         {{-- If you look to others for fulfillment, you will never truly be fulfilled. --}}
         <div class="row">
             <div class="col-lg-4 border-end border-secondary-opacity-2">
