@@ -5,7 +5,7 @@
             <div>
                 <div class="mb-3">
                     <label for="titre" class="form-label">TItre</label>
-                    <input type="text" class="form-control" id="titre" aria-describedby="textHelp">
+                    <input type="text" class="form-control" id="titre" aria-describedby="textHelp" >
                     <div class="form-text" id="textHelp">Veillez bien saisir votre titre</div>
                 </div>
                 <div class="mb-3">
@@ -24,8 +24,8 @@
                     </select>
                 </div>
                 <div class="mb-3">
-                    <label for="parcourir" class="form-label">Parcourir</label>
-                    <input type="file" class="form-control" id="parcourir" aria-describedby="textHelp">
+                    <label for="selectioniv" class="form-label">Selection image/video</label>
+                    <input type="file" class="form-control" id="selectioniv" aria-describedby="textHelp">
                     <div class="form-text" id="textHelp">Veillez rechercher l'image ou la video voulu</div>
                 </div>
                 <div class="mb-3 ms-4">

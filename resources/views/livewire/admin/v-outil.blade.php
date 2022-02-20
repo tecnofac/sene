@@ -1,4 +1,4 @@
-<div class="row container">
+<div class="row container pt-2">
     {{-- The Master doesn't talk, he acts. --}}
     <div class="col-lg-4 border-end border-secondary-opacity-2">
         <div class="mb-3">

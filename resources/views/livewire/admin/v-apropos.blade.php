@@ -5,7 +5,7 @@
             <div>
                 <div class="mb-3">
                     <label for="titre" class="form-label">TItre</label>
-                    <input type="text" class="form-control" id="titre" aria-describedby="textHelp">
+                    <input type="text" class="form-control" id="titre" aria-describedby="textHelp" >
                     <div class="form-text" id="textHelp">Veillez bien saisir votre titre</div>
                 </div>
                 <div class="mb-3">
@@ -24,8 +24,8 @@
                     </select>
                 </div>
                 <div class="mb-3">
-                    <label for="parcourir" class="form-label">Parcourir</label>
-                    <input type="file" class="form-control" id="parcourir" aria-describedby="textHelp">
+                    <label for="selectioniv" class="form-label">Selection image/video</label>
+                    <input type="file" class="form-control" id="selectioniv" aria-describedby="textHelp" >
                     <div class="form-text" id="textHelp">Veillez rechercher l'image ou la video voulu</div>
                 </div>
                 <div class="mb-3 ms-4">
@@ -42,8 +42,8 @@
             </div>
         </div>
         <div class="col-lg-8 p-0">
-            <div class="row mt-3">
-                <div class="card col-lg-4">
+            <div class="row ms-5 mt-3">
+                <div class="card ms-5 col-lg-4">
                     <img src="{{asset('img/logo.jpg')}}" alt="img" class="card-img-top border-bottom border-secondary-opacity-2 w-100">
                     <div class="card-body ">
                         <h5 class="card-title">Titre</h5>
@@ -51,7 +51,7 @@
                         <a href="#">Lien</a>
                     </div>
                 </div>
-                <div class="card col-lg-4">
+                <div class="card ms-5 col-lg-4">
                     <img src="{{asset('img/logo.jpg')}}" alt="img" class="card-img-top border-bottom border-decondary-opacity-2 w-100">
                     <div class="card-body ">
                         <h5 class="card-title">Titre</h5>
@@ -61,8 +61,8 @@
                 </div>
                 
             </div>
-            <div class="row mt-5">
-                <div class="card col-lg-4">
+            <div class="row ms-5 mt-5">
+                <div class="card ms-5 col-lg-4">
                     <img src="{{asset('img/logo.jpg')}}" alt="img" class="card-img-top border-bottom border-decondary-opacity-2 w-100">
                     <div class="card-body ">
                         <h5 class="card-title">Titre</h5>
@@ -70,7 +70,7 @@
                         <a href="#">Lien</a>
                     </div>
                 </div>
-                <div class="card col-lg-4">
+                <div class="card ms-5 col-lg-4">
                     <img src="{{asset('img/logo.jpg')}}" alt="img" class="card-img-top border-bottom border-decondary-opacity-2 w-100">
                     <div class="card-body ">
                         <h5 class="card-title">Titre</h5>
