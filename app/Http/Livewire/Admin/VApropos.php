@@ -4,15 +4,20 @@ namespace App\Http\Livewire\Admin;
 
 use Livewire\Component;
 use App\Models\apropo;
+use Illuminate\Support\Facades\Storage;
+use Livewire\WithFileUploads;
 
 class VApropos extends Component
 {
-    public $selectedId=1;
-    public $titre='kkkk';
-    public $description='oooooo';
-    public $apropo='pppppp';
+    use WithFileUploads;
+    
+    public $selectedId;
+    public $titre;
+    public $description;
+    public $photo;
+    public $apropos;
 
-    public function render()
+    public function render() 
     {
         $this->apropos=apropo::all();
         return view('livewire.admin.v-apropos');
@@ -24,21 +29,39 @@ class VApropos extends Component
             'titre'=> 'required',
             'description'=> 'required', 
         ]);
-        apropo::create($valider);
+        $record = apropo::create($valider);
+        $this->photo->storeAs('public/apropos', $record->id.'.png');
+        $this->clear();
+    }
+    public function clear()
+    {
+        $this->titre = "";
+        $this->description = "";
+        $this->selectedId = "";
+    }
+
+    public function selection($data)
+    {
+        $this->selectedId = $data["id"];
+        $this->titre = $data["titre"];
+        $this->description = $data["description"];
     }
 
     public function update()
     {
-        $this->titre = "gogo";
-        $this->description = "glod";
+       
        
         $valider = $this->validate([
             'titre'=> 'required',
-            'description'=> 'required',
+            'description'=> 'required'
         ]);
 
         $record=apropo::find($this->selectedId);
         $record->update($valider);
+        if (!empty($this->photo)) {
+            $this->photo->storeAs('public/apropos', $this->selectedId.'.png');
+        }
+
     }
     
     public function delete()
@@ -49,6 +72,7 @@ class VApropos extends Component
         ]);
         $record = apropo::find($this->selectedId);
         $record->delete();
+        Storage::delete('public/apropos/'.$this->selectedId.'.png');
     }
 
 }

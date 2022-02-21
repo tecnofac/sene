@@ -8,10 +8,10 @@ use App\Models\messages;
 class VMessage extends Component
 {
     public $selectedId;
-    public $nom;
+    public $nom = 'joel';
     public $email;
     public $sujet;
-    public $contenu;
+    public $contenu = 'la joie';
     public $messagess;
 
     public function render()
@@ -27,8 +27,8 @@ class VMessage extends Component
     {
         $valider = $this->validate([
             'nom'=> 'required',
-            'email'=> 'required',
-            'sujet'=> 'required',
+            //'email'=> 'required',
+            //'sujet'=> 'required',
             'contenu'=>'required'
         ]);
         
@@ -40,16 +40,16 @@ class VMessage extends Component
     public function update()
     {
         $this->nom = "gogo";
-        $this->email = "glod";
-        $this->sujet = "gaga";
+        //$this->email = "glod";
+        //$this->sujet = "gaga";
         $this->contenu = "glod";
        
         $valider = $this->validate([
             'nom'=> 'required',
-            'email'=> 'required',
-            'sujet'=>'required',
-            'contenu'=>'required',
-            'messages'=>'required'
+            //'email'=> 'required',
+            //'sujet'=>'required',
+            'contenu'=>'required'
+            //'messages'=>'required'
         ]);
         $record=messages::find($this->selectedId);
         $record->update($valider);
@@ -61,9 +61,9 @@ class VMessage extends Component
     {
         $valider = $this->validate([
             'nom'=> 'required',
-            'email'=> 'required',
-            'sujet'=>'required',
-            'contenu'=>'required',
+            //'email'=> 'required',
+            //'sujet'=>'required',
+            'contenu'=>'required'
 
         ]);
         $record = messages::find($this->selectedId);
