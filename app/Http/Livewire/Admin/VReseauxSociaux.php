@@ -5,18 +5,21 @@ namespace App\Http\Livewire\Admin;
 use Livewire\Component;
 use App\Models\reseaux;
 
+
+
 class VReseauxSociaux extends Component
 {
+   
     public $selectedId;
-    public $nom ='jjjjj';
-    public $utilisateur= 'uuuuuu';
-    public $url='hhhhhh';
-    public $icon='mmmmmmm';
+    public $nom ;
+    public $utilisateur;
+    public $url;
+    public $icon;
     public $reseaux;
 
     public function render()
     {
-        $this->reseaux= reseaux::all();
+        $this->reseauxx= reseaux::all();
         return view('livewire.admin.v-reseaux-sociaux');
     }
     public function create()
@@ -28,17 +31,32 @@ class VReseauxSociaux extends Component
             'icon'=>'required'
         ]);
 
-        reseaux::create($valider);   
+        reseaux::create($valider);
+        
     }
+
+    public function clear()
+    {
+        $this->nom = "";
+        $this->utilisateur = "";
+        $this->url = "";
+        $this->icon = "";
+        $this->selectedId = "";
+    }
+
+    public function selection($data)
+    {
+        $this->selectedId = $data["id"];
+        $this->nom = $data["nom"];
+        $this->utilisateur= $data["utilisateur"];
+        $this->url = $data["url"];
+        $this->icon = $data["icon"];
+    }
+
 
     
     public function update()
     {
-        $this->nom= "gogo";
-        $this->utilisateur = "glod";
-        $this->url = "gaga";
-        $this->icon='jjjj';
-
         $valider = $this->validate([
             'nom'=> 'required',
             'utilisateur'=> 'required',

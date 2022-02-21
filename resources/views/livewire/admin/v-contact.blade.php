@@ -4,7 +4,7 @@
         <div class="col-lg-4 border-end border-secondary-opacity-2">
                 <div class="pt-3">
                         <div class="mb-3">
-                            <select id="type">
+                            <select id="type" wire:model="type">
                                 <option value="">Tel</option>
                                 <option value="">Email</option>
                                 <option value="">Adresse</option>
@@ -12,7 +12,7 @@
                         </div>    
                         <div class="mb-3">
                             <label for="contenu" class="form-label">Contenu</label>
-                            <textarea  id="contenu" cols="30" rows="3" class="form-control"></textarea>
+                            <textarea  id="contenu" cols="30" rows="3" class="form-control" wire:model="contenu"></textarea>
                         </div>
                         <div class="m-3 ps-4">
                             <button class="btn btn-primary btn-lg" type="button">Enregistrer</button>

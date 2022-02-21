@@ -11,7 +11,7 @@ class VContact extends Component
     public $type='kkkkk';
     public $contenu='oooo';
     public $icon='papa';
-    public $Contacts='0023';
+    public $Contacts;
 
     public function render()
     {
