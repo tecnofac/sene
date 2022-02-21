@@ -22,18 +22,34 @@
             </div>
         </div>
         <div class="py-5 col-4">
+            {{-- Actualites --}}
             <h3>Dernières Actualités</h3>
-            <div class="row">
+            @foreach (array_slice($actus, 0, (count($actus) > 4 ? 4 : count($actus) )) as $act)    
+            <a class="row text-decoration-none text-secondary" href="#" >
                 <div class="col-3">
                     <img src="{{ asset('img/1.jpg') }}" alt="" class="w-100">
                 </div>
                 <div class="col-9">
                     <h4>Glodi nsuadi</h4>
-                    <p>
+                    <p style="text-align:justify " class="d-inline-block text-truncate w-100">
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia laborum cum animi atque totam? Quas, aspernatur ullam? Pariatur asperiores saepe, fugiat nostrum veritatis sit numquam fugit maiores facilis! Facilis, obcaecati.
                     </p>
                 </div>
-            </div>
+            </a>
+            @endforeach
+            <hr>
+            {{-- Liens --}}
+            <h3>Liens Utiles</h3>
+            @foreach ($liens as $lien)    
+            <a class="row text-decoration-none text-secondary" href="#" >
+                <div class="col-10">
+                    <i class="fa fa-chevron-right"></i> Ministère du Plan
+                </div>
+                {{-- <div class="col-2 text-end">
+                    <i class="fa fa-chevron-right"></i>
+                </div> --}}
+            </a>
+            @endforeach
         </div>
     </div>
 </div>

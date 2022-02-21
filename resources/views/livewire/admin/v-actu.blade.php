@@ -42,7 +42,7 @@
             </div>
         </div>
         <div class="col-lg-8">
-            <div class="row mt-3">
+            <div class="mt-3 row">
                 @foreach ($actus as $act)
 
                 <div class="card col-lg-4" wire:click="selection({{$act}})">
