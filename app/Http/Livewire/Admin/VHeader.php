@@ -28,7 +28,7 @@ class VHeader extends Component
             'titre'=> 'required',
             'Descrip'=> 'required',
         ]);
-        header::create($valider);
+        $record = header::create($valider);
         $this->photo->storeAs('public/headers', $record->id.'.png');
         $this->clear();
     }

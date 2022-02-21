@@ -10,11 +10,11 @@ class VLiens extends Component
     public $selectedId=1;
     public $nom='kkkk';
     public $url='ppppp';
-    public $liens;
+    public $lienss;
 
     public function render()
     {
-        $this->liens=liens::all();
+        $this->lienss=liens::all();
         return view('livewire.admin.v-liens');
     }
 
@@ -25,13 +25,27 @@ class VLiens extends Component
             'url'=> 'required',
         ]);
         liens::create($valider);
+        $this->clear();
+    }
+
+    public function clear()
+    {
+        $this->nom = "";
+        $this->url= "";
+        
+        $this->selectedId = "";
+    }
+
+    public function selection($data)
+    {
+        $this->selectedId = $data["id"];
+        $this->nom = $data["nom"];
+        $this->url = $data["url"];
     }
 
     
     public function update()
     {
-        $this->nom = "gogo";
-        $this->url = "glod";
         $valider = $this->validate([
             'nom'=> 'required',
             'url'=> 'required',

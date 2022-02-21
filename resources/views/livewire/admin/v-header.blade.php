@@ -33,11 +33,13 @@
         </div>
         
         @foreach($headers as $head)
-        <div class="col-lg-4">
-            <div class="card " wire:click="selection({{$act}}>
+        <div class="col-lg-4"  wire:click="selection({{$head}})">
+            <div class="card ">
                 <h5 class="card-title bg-light text-decoration-underline">{{$head->titre}}</h5>
-                <div class="card-body ">
-                    <img src="{{asset('img/logo.jpg')}}" alt="img" class="card-img-top border-bottom border-decondary-opacity-2 w-100">
+                <div class="card-body " >
+                    @if(Storage::exists("public/headers/".$head->id.".png"))
+                    <img src="{{asset('storage/headers/'.$head->id.'.png')}}"  alt="img" class="card-img-top border-bottom border-decondary-opacity-2 w-100">
+                    @endif
                     <p class="card-text">{{$head->Descrip}}</p>
                 </div>
             </div>
@@ -47,3 +49,4 @@
     </div>
 
 </div>
+
