@@ -5,7 +5,7 @@
             <div>
                 <div class="mb-3">
                     <label for="titre" class="form-label">TItre</label>
-                    <input type="text" class="form-control" id="titre" aria-describedby="textHelp" >
+                    <input type="text" class="form-control" id="titre" aria-describedby="textHelp" wire:model="titre">
                     <div class="form-text" id="textHelp">Veillez bien saisir votre titre</div>
                 </div>
                 <div class="mb-3">
@@ -42,7 +42,7 @@
             </div>
         </div>
         <div class="col-lg-8">
-            <div class="row mt-3">
+            <div class="mt-3 row">
                 @foreach ($actus as $act)
 
                 <div class="card col-lg-4" wire:click="selection({{$act}})">
