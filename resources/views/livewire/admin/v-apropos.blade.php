@@ -13,18 +13,7 @@
                     <textarea  id="description" cols="30" rows="3" class="form-control"></textarea>
                 </div>
                 <div class="mb-3">
-                    <label for="url" class="form-label">Liens</label>
-                    <input type="url" class="form-control" id="url" aria-describedby="textHelp">
-                    <div class="form-text" id="textHelp">Veillez bien saisir vos liens ici</div>
-                </div>
-                <div class="mb-3">
-                    <select id="type">
-                        <option value="">image</option>
-                        <option value="">video</option>
-                    </select>
-                </div>
-                <div class="mb-3">
-                    <label for="selectioniv" class="form-label">Selection image/video</label>
+                    <label for="selectioniv" class="form-label">Selection image</label>
                     <input type="file" class="form-control" id="selectioniv" aria-describedby="textHelp" >
                     <div class="form-text" id="textHelp">Veillez rechercher l'image ou la video voulu</div>
                 </div>
@@ -41,8 +30,8 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-8 p-0">
-            <div class="row ms-5 mt-3">
+        <div class="p-0 col-lg-8">
+            <div class="mt-3 row ms-5">
                 <div class="card ms-5 col-lg-4">
                     <img src="{{asset('img/logo.jpg')}}" alt="img" class="card-img-top border-bottom border-secondary-opacity-2 w-100">
                     <div class="card-body ">
@@ -61,7 +50,7 @@
                 </div>
                 
             </div>
-            <div class="row ms-5 mt-5">
+            <div class="mt-5 row ms-5">
                 <div class="card ms-5 col-lg-4">
                     <img src="{{asset('img/logo.jpg')}}" alt="img" class="card-img-top border-bottom border-decondary-opacity-2 w-100">
                     <div class="card-body ">
