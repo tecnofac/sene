@@ -10,6 +10,7 @@ use Livewire\WithFileUploads;
 class VApropos extends Component
 {
     use WithFileUploads;
+    
     public $selectedId;
     public $titre;
     public $description;
@@ -28,8 +29,8 @@ class VApropos extends Component
             'titre'=> 'required',
             'description'=> 'required', 
         ]);
-        apropo::create($valider);
-        //$this->photo->storeAs('public/apropos', $record->id.'.png');
+        $record = apropo::create($valider);
+        $this->photo->storeAs('public/apropos', $record->id.'.png');
         $this->clear();
     }
     public function clear()
@@ -48,8 +49,7 @@ class VApropos extends Component
 
     public function update()
     {
-        $this->titre = "gogo";
-        $this->description = "glod";
+       
        
         $valider = $this->validate([
             'titre'=> 'required',

@@ -10,11 +10,12 @@
                 </div>
                 <div class="mb-3">
                     <label for="description" class="form-label">Description</label>
-                    <textarea  id="description" cols="30" rows="3" class="form-control"></textarea>
+                    <textarea  id="description" cols="30" rows="3" class="form-control" wire:model="description"></textarea>
                 </div>
+                
                 <div class="mb-3">
-                    <label for="selectioniv" class="form-label">Selection image</label>
-                    <input type="file" class="form-control" id="selectioniv" aria-describedby="textHelp" >
+                    <label for="selectioniv" class="form-label">Selection image/video</label>
+                    <input type="file" class="form-control" id="selectioniv" aria-describedby="textHelp" wire:model="photo">
                     <div class="form-text" id="textHelp">Veillez rechercher l'image ou la video voulu</div>
                 </div>
                 <div class="mb-3 ms-4">
@@ -32,15 +33,15 @@
         </div>
         <div class="col-lg-8 p-0">
             <div class="row ms-5 mt-5">
-                @foreach ($apropos as $act)
-                    <div class="card ms-5 col-lg-4">
-                        @if(Storage::exists("public/apropos/".$act->id.".png"))
-                        <img src="{{asset('storage/apropos/'.$act->id.'.png')}}" alt="img" class="card-img-top border-bottom border-decondary-opacity-2 w-100">
+                @foreach ($apropos as $aprop)
+                    <div class="card ms-5 col-lg-4" wire:click="selection({{$aprop}})">
+                        @if(Storage::exists("public/apropos/".$aprop->id.".png"))
+                        <img src="{{asset('storage/apropos/'.$aprop->id.'.png')}}" alt="img" class="card-img-top border-bottom border-decondary-opacity-2 w-100">
                         @endif
                         <div class="card-body ">
                             <h5 class="card-title">Titre</h5>
-                            <p class="card-text">{{$act->titre}}</p>
-                            <a href="#">{{$act->description}}</a>
+                            <p class="card-text">{{$aprop->titre}}</p>
+                            <a href="#">{{$aprop->description}}</a>
                         </div>
 
                 </div>  

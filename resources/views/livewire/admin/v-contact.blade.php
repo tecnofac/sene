@@ -14,7 +14,8 @@
                             <label for="contenu" class="form-label">icon</label>
                             <input type="text" class="form-control" wire:model="icon">
                             <label for="contenu" class="form-label">Contenu</label>
-                            <textarea  id="contenu" cols="30" rows="3" class="form-control" wire:model="contenu"></textarea>
+                            <input type="text" class="form-control" wire:model="contenu" id="contenu">
+                            
                         </div>
                         <div class="m-3 ps-4">
                             <button class="btn btn-primary btn-lg" type="button" wire:click="create">Enregistrer</button>
