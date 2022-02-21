@@ -46,7 +46,7 @@
                     </div>
                     <div class="col-lg-9 pt-3">
                         <h6>{{$res->nom}}</h6>
-                        <a href="#">http://facebook.com?blablabla...</a>
+                        <a href="#">{{$res->url}}</a>
                     </div>
                 </div>
             </div>
