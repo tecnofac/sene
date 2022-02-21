@@ -9,8 +9,8 @@ class VMessage extends Component
 {
     public $selectedId;
     public $nom = 'joel';
-    //public $email;
-    //public $sujet;
+    public $email;
+    public $sujet;
     public $contenu = 'la joie';
     public $messagess;
 
@@ -48,7 +48,7 @@ class VMessage extends Component
             'nom'=> 'required',
             //'email'=> 'required',
             //'sujet'=>'required',
-            //'contenu'=>'required',
+            'contenu'=>'required'
             //'messages'=>'required'
         ]);
         $record=messages::find($this->selectedId);
@@ -63,7 +63,7 @@ class VMessage extends Component
             'nom'=> 'required',
             //'email'=> 'required',
             //'sujet'=>'required',
-            'contenu'=>'required',
+            'contenu'=>'required'
 
         ]);
         $record = messages::find($this->selectedId);

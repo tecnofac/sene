@@ -7,10 +7,10 @@ use App\Models\Offre;
 
 class VOffre extends Component
 {
-    public $selectedId=1;
-    public $titre='kkkk';
-    public $description='oooooo';
-    public $contacts='pppppp';
+    public $selectedId;
+    public $titre;
+    public $description;
+    public $contacts;
     public $offres;
 
     public function render()
