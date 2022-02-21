@@ -7,10 +7,10 @@ use App\Models\Contact;
 
 class VContact extends Component
 {
-    public $selectedId=1;
-    public $type='kkkkk';
-    public $contenu='oooo';
-    public $icon='papa';
+    public $selectedId;
+    public $type;
+    public $contenu;
+    public $icon;
     public $Contacts;
 
     public function render()
@@ -24,16 +24,31 @@ class VContact extends Component
         $valider = $this->validate([
             'type'=> 'required',
             'contenu'=> 'required',
-            'icon'=>'required',
+            'icon'=>'required'
         ]);
+        
         Contact::create($valider);
+        $this->clear();
     }
+    public function clear()
+    {
+        $this->type = "";
+        $this->contenu = "";
+        $this->icon = "";
+    }
+
+    public function selection($data)
+    {
+        $this->selectedId = $data["id"];
+        $this->type = $data["type"];
+        $this->contenu = $data["contenu"];
+        $this->icon = $data["icon"];
+    }
+
 
     public function update()
     {
-        $this->type = "gogo";
-        $this->contenu= "glod";
-        $this->icon = "gaga";
+       
         $valider = $this->validate([
             'type'=> 'required',
             'contenu'=> 'required',

@@ -19,22 +19,35 @@ class VOffre extends Component
         return view('livewire.admin.v-offre');
     }
     public function create()
-        {
-            $valider = $this->validate([
-                'titre'=>'required',
-                'description'=>'required', 
-                'contacts'=>'required'
-            ]);
+    {
+        $valider = $this->validate([
+            'titre'=>'required',
+            'description'=>'required', 
+            'contacts'=>'required'
+        ]);
     
             Offre::create($valider);
-        }
+            $this->clear();
+    }
+
+    public function clear()
+    {
+        $this->titre = "";
+        $this->description = "";
+        $this->contacts = "";
+        $this->selectedId = "";
+    }
+
+    public function selection($data)
+    {
+        $this->selectedId = $data["id"];
+        $this->titre = $data["titre"];
+        $this->description = $data["description"];
+        $this->contacts = $data["contacts"];
+    }
     
     public function update()
     {
-        $this->titre = "gogo";
-        $this->description = "glod";
-        $this->contacts = "joe";
-           
         $valider = $this->validate([
             'titre'=> 'required',
             'description'=> 'required',
@@ -43,7 +56,7 @@ class VOffre extends Component
     
         $record=Offre::find($this->selectedId);
         $record->update($valider);
-        }
+    }
         
     
     public function delete()

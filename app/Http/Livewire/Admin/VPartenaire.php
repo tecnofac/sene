@@ -4,17 +4,22 @@ namespace App\Http\Livewire\Admin;
 
 use Livewire\Component;
 use App\Models\partenaire;
+use Illuminate\Support\Facades\Storage;
+use Livewire\WithFileUploads;
+
 
 class VPartenaire extends Component
 {
+    use WithFileUploads;
     public $selectedId;
     public $nom;
     public $url;
-    public $partenaire;
+    public $photo;
+    public $partenaires;
     
     public function render()
     {
-        $this->partenaire=partenaire::all();
+        $this->partenaires=partenaire::all();
         return view('livewire.admin.v-partenaire');
     }
     public function create()
@@ -23,15 +28,29 @@ class VPartenaire extends Component
             'nom'=> 'required',
             'url'=>'required',
         ]);
-        partenaire::create($valider);
+        $record = partenaire::create($valider);
+        $this->photo->storeAs('public/actus', $record->id.'.png');
+        $this->clear();
+    }
+
+    public function clear()
+    {
+        $this->nom = "";
+        $this->url = "";
+        $this->photo = "";
+        $this->selectedId = "";
+    }
+
+    public function selection($data)
+    {
+        $this->selectedId = $data["id"];
+        $this->nom = $data["nom"];
+        $this->url = $data["url"];
     }
 
     
     public function update()
     {
-        $this->nom = 'ppppp';
-        $this->url='ooooo';
-
         $valider = $this->validate([
             'nom'=> 'required',
             'url'=>'required',
@@ -39,6 +58,10 @@ class VPartenaire extends Component
 
         $record=partenaire::find($this->selectedId);
         $record->update($valider);
+        $record->update($valider);
+        if (!empty($this->photo)) {
+            $this->photo->storeAs('public/actus', $this->selectedId.'.png');
+        }
     }
     
     public function delete()
@@ -49,5 +72,6 @@ class VPartenaire extends Component
         ]);
         $record=partenaire::find($this->selectedId);
         $record->delete($valider);
+        Storage::delete('public/actus/'.$this->selectedId.'.png');
     }
 }

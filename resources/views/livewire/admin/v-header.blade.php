@@ -16,7 +16,7 @@
         <div class="col-lg-4 border-end border-secondary-opacity-2">
             <div class="mb-3">
                 <label for="selectionimage" class="form-label">Selection image</label>
-                <input type="file" class="form-control" id="selectionimage" aria-describedby="textHelp">
+                <input type="file" class="form-control" id="selectionimage" aria-describedby="textHelp" wire:model="photo">
                 <div class="form-text" id="textHelp">Veillez rechercher l'image ou la video voulu</div>
             </div>
             <div class="mb-3 ms-4">
