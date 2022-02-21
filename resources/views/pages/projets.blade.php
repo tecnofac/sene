@@ -2,6 +2,11 @@
 
 @section('content')
 <div>
-    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sunt a quis nobis amet, maxime dicta ullam corrupti error iure tempora suscipit quo. Distinctio quia iusto repudiandae eius optio rerum fugiat.
+    <div class="py-4 header-h2 justify-items-center justify-content-center d-flex bg-info" {{-- style="background-image:url({{ asset('img/1.jpg') }})" --}}>
+        <p class="container text-white h2" {{-- style="background-color: rgba(0, 0, 0, .3)" --}}>Projets</p>
+    </div>
+    <div class="container">
+        <livewire:client.v-projet />
+    </div>
 </div>
 @endsection
