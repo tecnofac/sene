@@ -5,11 +5,7 @@
             <div>
                 <div class="mb-3">
                     <label for="titre" class="form-label">TItre</label>
-<<<<<<< HEAD
                     <input type="text" class="form-control" id="titre" aria-describedby="textHelp" wire:model="titre">
-=======
-                    <input type="text" class="form-control" id="titre" aria-describedby="textHelp" >
->>>>>>> 3b3907c7321438376c63017fcdd12f5d354642d0
                     <div class="form-text" id="textHelp">Veillez bien saisir votre titre</div>
                 </div>
                 <div class="mb-3">
