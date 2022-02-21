@@ -10,11 +10,10 @@
                 </div>
                 <div class="mb-3">
                     <label for="description" class="form-label">Description</label>
-                    <textarea  id="description" cols="30" rows="3" class="form-control" wire:model="description"></textarea>
+                    <textarea  id="description" cols="30" rows="3" class="form-control"></textarea>
                 </div>
-                
                 <div class="mb-3">
-                    <label for="selectioniv" class="form-label">Selection image/video</label>
+                    <label for="selectioniv" class="form-label">Selection image</label>
                     <input type="file" class="form-control" id="selectioniv" aria-describedby="textHelp" >
                     <div class="form-text" id="textHelp">Veillez rechercher l'image ou la video voulu</div>
                 </div>

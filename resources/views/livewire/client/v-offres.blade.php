@@ -1,24 +1,28 @@
 <div>
     <div class="row">
         <div class="py-5 col-8">
-            <div class="shadow card w-100" style="width: 18rem;">
-                <img src="{{ asset('img/1.jpg') }}" class="card-img-top" alt="...">
-                <div class="card-img-overlay">
-                    <h5 class="px-1 py-2 text-white card-title" style="background-color: rgba(0, 0, 0, .3)">Card title</h5>
-                   
-                  </div>
-                <div class="card-body">
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <div class="row">
+                @foreach (array_slice($actus, 0, (count($actus) > 4 ? 4 : count($actus) )) as $act)    
+
+                <div class="mb-4 col-md-6">
+                    <div class="shadow card w-100" style="width: 18rem;">
+                       
+                        <div class="card-body">
+                            <h5 class="px-1 py-2 text-white card-title" style="background-color: rgba(0, 0, 0, .3)">Card title</h5>
+                          <p class="card-text">
+                              Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, laborum. Ab eum voluptas doloremque animi vitae omnis adipisci corporis accusantium neque reiciendis? Esse cupiditate, tempore fuga pariatur voluptas deserunt eos?
+                          </p>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                          <li class="list-group-item">An item</li>
+                        </ul>
+                        <div class="card-body">
+                          <a href="#" class="card-link">Card link</a>
+                          <a href="#" class="card-link">Another link</a>
+                        </div>
+                    </div>
                 </div>
-                <ul class="list-group list-group-flush">
-                  <li class="list-group-item">An item</li>
-                  <li class="list-group-item">A second item</li>
-                  <li class="list-group-item">A third item</li>
-                </ul>
-                <div class="card-body">
-                  <a href="#" class="card-link">Card link</a>
-                  <a href="#" class="card-link">Another link</a>
-                </div>
+                @endforeach
             </div>
         </div>
         <div class="py-5 col-4">
