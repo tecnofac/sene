@@ -22,7 +22,7 @@
                <textarea name="" id="inputcontenu" cols="30" rows="10"  class="w-100"></textarea>
             </div>
             <div class="offset-md-11 col-md-1">
-              <button type="submit" class="col-md-12 btn btn-primary">Sign in</button>
+              <button type="submit" class="col-md-12 btn btn-primary">Envoyer</button>
             </div>
         </form>
     </div>

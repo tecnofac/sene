@@ -48,7 +48,7 @@
     <script>
        
     </script> -->
-    <div class="header-h2" style="background-image:url({{ asset('img/1.jpg') }})" data-bs-interval="10000">
+    <div class="header-h2" style="background-image:url({{asset('storage/headers/'.$headers[0]->id.'.png')}}?{{rand()}})" data-bs-interval="10000">
         <!--  <img src="images/1.jpg" alt="" class="d-block w-100 header-h"> -->
         <div class=" row" style="background-color: rgba(0,0,0,.5)">
             <video class="video col-lg-6 col-12" autoplay loop style="opacity:.3" muted>
@@ -61,7 +61,7 @@
                     <div class="text-white align-self-center">
                         <h1>Bonjour</h1>
                         <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel repudiandae, eos necessitatibus ipsum sunt voluptates, quae
+                            {{$headers[0]->Descrip}}
                         </p>
                     </div>
                 </div>

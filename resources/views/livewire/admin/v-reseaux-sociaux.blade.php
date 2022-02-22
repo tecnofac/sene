@@ -1,6 +1,6 @@
-<div class="row container pt-2">
+<div class="pt-2 container-fluid row">
     {{-- If your happiness depends on money, you will never be happy with yourself. --}}
-    <div class="col-lg-4 border-end border-secondary-opacity-2">
+    <div class="col-lg-3 border-end border-secondary-opacity-2">
         <div class="mb-3">
             <label for="nomreseaux" class="form-label">Nom du réseau</label>
             <input type="text" class="form-control" id="nomreseau" aria-describedby="textHelp " wire:model="nom">
@@ -35,16 +35,16 @@
     </div>
     
 
-    <div class="col-lg-8">
+    <div class=" col-lg-9">
         
-        <div class="row pt-3">
+        <div class="pt-3 row w-100">
            @foreach ($reseauxx as $res)
-            <div class="col-lg-6 border border-secondary-opacity-2 rounded p-3">
-                <div class="row">
+            <div class="mb-3 col-lg-4"  wire:click="selection({{$res}})">
+                <div class="border rounded row border-secondary-opacity-2 w-100">
                     <div class="col-lg-3">
-                        <i class="fab fa-facebook display-3 text-primary"></i>
+                        <i class="fab fa-{{$res->icon}} display-3 text-primary"></i>
                     </div>
-                    <div class="col-lg-9 pt-3">
+                    <div class="pt-3 col-lg-9">
                         <h6>{{$res->nom}}</h6>
                         <a href="#">{{$res->url}}</a>
                     </div>

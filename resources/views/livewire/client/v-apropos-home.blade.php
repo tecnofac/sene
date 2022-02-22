@@ -8,22 +8,21 @@
                     <div class="mb-3 card">
                         <div class="row g-0">
                             <div class="col-lg-4">
-                                <img src="{{ asset('img/chef.jpg') }}" alt="" class="appr h-100 w-100" >
+                                <img src="{{ asset('storage/apropos/'.$apropos[0]->id.'.png') }}" alt="" class="appr h-100 w-100" >
                             </div>
                             <div class="col-lg-8">
                                 <div class="card-body">
-                                    <h5>SENAREC</h5>
-                                    <p class="card-text">
-                                        Le Secrétariat National pour le Renforcement de Capacités (SENAREC), service public crée par Arrêté Ministériel n°003/CAB/MIN.PL/98 du 21 février 1998, modifié par le Décret n° 011/33 du 09 Aout 2011 portant création du cadre institutionnel d’encadrement et d’accompagnement des activités de renforcement des capacités en RDC, en sigle « CEARC » et complété par le Décret N° 011/35 du 13 Août 2011 portant création, organisation et fonctionnement du SENAREC, stipule notamment, que le SENAREC est le guichet unique des activités des renforcements des capacités en République Démocratique du Congo. 
+                                    <h5>{{$apropos[1]->titre}}</h5>
+                                    <p class="card-text" style="text-align:justify">
+                                        {{$apropos[1]->description}}
                                     </p>
                                     <a class="card-text" href="#"><small class="text-muted">Lire la suite</small></a>
                                 </div>
                                 <hr>
                                 <div class="card-body">
-                                    <h5>En savoir plus sur nous</h5>
+                                    <h5>{{$apropos[2]->titre}}</h5>
                                     <p class="card-text ">
-                                        Notre mission est de : <br>
-                                        Contribuer à la formulation de la vision et de la stratégie globale de renforcement des capacités et les programmes y afférents pour le secteur public, la société civile et le secteur privé en République Démocratique du Congo ; Susciter des réflexions de haut niveau sur la modernisation de la Fonction Publique et le renforcement des capacités des acteurs étatiques et non étatiques ;
+                                        {{$apropos[2]->description}}
                                     </p>
                                     <a class="card-text" href="#"><small class="text-muted">Lire la suite</small></a>
                                 </div>

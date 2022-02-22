@@ -17,7 +17,7 @@ class CreateOutilsTable extends Migration
             $table->id();
             $table->string('titre');
             $table->string('sousTitre');
-            $table->string('description');
+            $table->text('description');
             $table->timestamps();
         });
     }

@@ -4,18 +4,19 @@ namespace App\Http\Livewire\Client;
 
 use Livewire\Component;
 use App\Models\Contact;
-
+use App\Models\liens;
+use App\Models\reseaux;
 class Footer extends Component
 {
-    public $selectedId;
-    public $type;
-    public $contenu;
-    public $icon;
-    public $Contacts;
+    public $contacts;
+    public $urls;
+    public $rxx;
 
     public function render()
     {
-        $this->Contacts=Contact::all();
+        $this->contacts = Contact::all();
+        $this->urls = liens::all();
+        $this->rxx = reseaux::all();
         return view('livewire.client.footer');
     }
 }

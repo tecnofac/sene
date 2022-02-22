@@ -6,7 +6,7 @@
         <p class="container text-white h2" {{-- style="background-color: rgba(0, 0, 0, .3)" --}}>Outils</p>
     </div>
     <div class="container">
-        <livewire:client.v-outils />
+        <livewire:client.v-outils ido="{{$ido}}" />
     </div>
 </div>
 @endsection

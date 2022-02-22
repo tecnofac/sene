@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container-fluid">
     {{-- To attain knowledge, add things every day; To attain wisdom, subtract things every day. --}}
     <div class="row">
         <div class="col-lg-4 border-end border-secondary-opacity-2">
@@ -18,10 +18,14 @@
                     <div class="form-text" id="textHelp">Veillez bien saisir vos liens ici</div>
                 </div>
                 <div class="mb-3">
-                    <select id="type" wire:model="type">
-                        <option value="img">image</option>
-                        <option value="vid">video</option>
-                    </select>
+                    <div class="mb-3 input-group">
+                        <label class="input-group-text" for="inputGroupSelect01">Options</label>
+                        <select class="form-select" id="inputGroupSelect01" wire:model="type">
+                          <option selected>Choisir un type</option>
+                          <option value="img">Images</option>
+                          <option value="vid">Video youtube</option>
+                        </select>
+                      </div>
                 </div>
                 <div class="mb-3">
                     <label for="parcourir" class="form-label">Parcourir</label>
@@ -44,15 +48,16 @@
         <div class="col-lg-8">
             <div class="mt-3 row">
                 @foreach ($actus as $act)
-
-                <div class="card col-lg-4" wire:click="selection({{$act}})">
-                    @if(Storage::exists("public/actus/".$act->id.".png"))
-                    <img src="{{asset('storage/actus/'.$act->id.'.png')}}" alt="img" class="card-img-top border-bottom border-secondary-opacity-2 w-100">
-                    @endif
-                    <div class="card-body ">
-                        <h5 class="card-title">{{$act->titre}}</h5>
-                        <p class="card-text">{{$act->descrip}}</p>
-                        <a href="{{$act->url}}">{{$act->url}}</a>
+                <div class="col-lg-4">
+                    <div class="card" wire:click="selection({{$act}})">
+                        @if(Storage::exists("public/actus/".$act->id.".png"))
+                        <img src="{{asset('storage/actus/'.$act->id.'.png')}}?{{rand()}}" alt="img" class="card-img-top border-bottom border-secondary-opacity-2 w-100">
+                        @endif
+                        <div class="card-body ">
+                            <h5 class="card-title">{{$act->titre}}</h5>
+                            <p class="card-text">{{$act->descrip}}</p>
+                            <a href="{{$act->url}}">{{$act->url}}</a>
+                        </div>
                     </div>
                 </div>
                 @endforeach

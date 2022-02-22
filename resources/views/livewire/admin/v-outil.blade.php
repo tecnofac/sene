@@ -1,4 +1,4 @@
-<div class="row container pt-2">
+<div class="container pt-2 row">
     {{-- The Master doesn't talk, he acts. --}}
     <div class="col-lg-4 border-end border-secondary-opacity-2">
         <div class="mb-3">
@@ -33,14 +33,14 @@
         </div>
     </div>
     <div class="col-lg-8">
-        <div class="row mt-5">
+        <div class="mt-5 row">
             @foreach ($outils as $out)
             <div class="card col-lg-4" wire:click="selection({{$out}})">
                 <div class="card-body ">
                     <h5 class="card-title text-decoration-underline">{{$out->titre}}</h5>
                     <h6 class="card-text text-decoration-underline">{{$out->sousTitre}}</h6>
                     @if(Storage::exists("public/outils/".$out->id.".png"))
-                    <img src="{{asset('storage/outils/'.$outil->id.'.png')}} alt="img" class=" border-bottom border-decondary-opacity-2 w-100">
+                    <img src="{{asset('storage/outils/'.$out->id.'.png')}}?{{rand()}}" alt="img" class=" border-bottom border-decondary-opacity-2 w-100">
                     @endif
                     <p class="card-text">{{$out->description}}</p>
                 </div>

@@ -33,14 +33,14 @@
             <div class="col-lg-8">
                 <div class="row">
                     @foreach ($partenaires as $part)
-                    <div class="col-lg-3">
+                    <div class="col-lg-3" wire:click="selection({{$part}})">
                         <div class="card ">
-                            <h5 class="card-title border-bottom border-secondary-opacity-2">Nom</h5>
+                            <h5 class="card-title border-bottom border-secondary-opacity-2">{{$part->nom}}</h5>
                             <div class="card-body ">
-                                @if(Storage::exists("public/actus/".$part->id.".png"))
-                                <img src="{{asset('storage/actus/'.$part->id.'.png')}}" alt="img" class="card-img-top border-bottom border-secondary-opacity-2 w-100">
+                                @if(Storage::exists("public/partenaires/".$part->id.".png"))
+                                <img src="{{asset('storage/partenaires/'.$part->id.'.png')}}?{{rand()}}" alt="img" class="card-img-top border-bottom border-secondary-opacity-2 w-100">
                                 @endif
-                                <a href="#">Lien</a>
+                                <a href="#">{{$part->url}}</a>
                             </div>
                         </div>
                     </div>

@@ -1,7 +1,7 @@
-<div class="container">
+<div class="container-fluid">
     {{-- Stop trying to control. --}}
     <div class="row">
-        <div class="col-lg-4 border-end border-secondary-opacity-2">
+        <div class="col-lg-3 border-end border-secondary-opacity-2">
             <div>
                 <div class="mb-3">
                     <label for="titre" class="form-label" >TItre</label>
@@ -31,20 +31,20 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-8 p-0">
-            <div class="row ms-5 mt-5">
+        <div class="col-lg-9">
+            <div class="mt-5 row">
                 @foreach ($apropos as $aprop)
-                    <div class="card ms-5 col-lg-4" wire:click="selection({{$aprop}})">
+                <div class="col-lg-4">
+                    <div class="card" wire:click="selection({{$aprop}})">
                         @if(Storage::exists("public/apropos/".$aprop->id.".png"))
-                        <img src="{{asset('storage/apropos/'.$aprop->id.'.png')}}" alt="img" class="card-img-top border-bottom border-decondary-opacity-2 w-100">
+                        <img src="{{asset('storage/apropos/'.$aprop->id.'.png')}}?{{rand()}}" alt="img" class="card-img-top border-bottom border-decondary-opacity-2 w-100">
                         @endif
                         <div class="card-body ">
-                            <h5 class="card-title">Titre</h5>
-                            <p class="card-text">{{$aprop->titre}}</p>
-                            <a href="#">{{$aprop->description}}</a>
+                            <h5 class="card-title">{{$aprop->titre}}</h5>
+                            <p class="card-text">{{$aprop->description}}</p>
                         </div>
-
-                </div>  
+                    </div>  
+                </div>
                 
                 @endforeach   
                 </div>

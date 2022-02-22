@@ -30,7 +30,9 @@ class VApropos extends Component
             'description'=> 'required', 
         ]);
         $record = apropo::create($valider);
-        $this->photo->storeAs('public/apropos', $record->id.'.png');
+        if(!empty($this->photo)){
+            $this->photo->storeAs('public/apropos', $record->id.'.png');
+        }
         $this->clear();
     }
     public function clear()

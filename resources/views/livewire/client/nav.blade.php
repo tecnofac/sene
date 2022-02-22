@@ -35,8 +35,10 @@
                         Outils
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="Md">
-                            <li><a href="#" class="dropdown-item"> jfjfj</a></li>
-                            <li><a href="#" class="dropdown-item">VIDEOS</a></li>
+                            @foreach ($outils as $out)
+                            <li><a href="{{ route('outil', $out->id) }}" class="dropdown-item"> {{$out->titre}}</a></li>
+                            @endforeach
+                            
                         </ul>
                     </li>
                     <li class="px-2 nav-item dropdown">
@@ -44,38 +46,29 @@
                             Projets
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="appro">
-                            <li><a href="pages/a_propos.php" class="dropdown-item">SENAREC</a></li>
-                            <li><a href="#" class="dropdown-item">PRRAP</a></li>
-                            <li><a href="#" class="dropdown-item">PRC-GAP</a></li>
-                            <li><a href="#" class="dropdown-item">IRR</a></li>
+                            @foreach ($projets as $prj)                                
+                            <li><a href="{{ route('projet', $prj->id) }}" class="dropdown-item">{{$prj->titre}}</a></li>
+                            @endforeach
                         </ul>
                     </li>
                     <li class="px-2 nav-item">
-                        <a href="#" class="nav-link">Partenaires</a>
+                        <a href="{{route('home', '#Partenaires')}}" class="nav-link">Partenaires</a>
                     </li>
-                    <li class="px-2 nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" id="Md" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Mediatiques
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="Md">
-                            <li><a href="#" class="dropdown-item"> jfjfj</a></li>
-                            <li><a href="#" class="dropdown-item">VIDEOS</a></li>
-                        </ul>
-                    </li>
+                    
                     <li class="px-2 nav-item">
-                        <a href="#" class="nav-link">Publications</a>
+                        <a href="{{route('home', '#Actus')}}" class="nav-link">Actualités</a>
                     </li>
                     <li class="px-2 nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" id="offres" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Offres
+                            Mediatiques
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="offres">
-                            <li><a href="" class="dropdown-item">kfjf</a></li>
-                            <li><a href="" class="dropdown-item">jfj</a></li>
+                            <li><a href="{{ route('media', 'vid') }}" class="dropdown-item">Videos</a></li>
+                            <li><a href="{{ route('media', 'img') }}" class="dropdown-item">Photos</a></li>
                         </ul>
                     </li>
                     <li class="px-2 nav-item">
-                        <a href="#" class="nav-link">Contact</a>
+                        <a href="{{ route('contact') }}" class="nav-link">Contact</a>
                     </li>
                     <li class="nav-item ">
                         <a href="?" class="nav-link bg-info">Fr</a>

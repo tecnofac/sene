@@ -29,7 +29,9 @@ class VPartenaire extends Component
             'url'=>'required',
         ]);
         $record = partenaire::create($valider);
-        $this->photo->storeAs('public/actus', $record->id.'.png');
+        if(!empty($this->photo)){
+            $this->photo->storeAs('public/partenaires', $record->id.'.png');
+        }
         $this->clear();
     }
 
@@ -60,7 +62,7 @@ class VPartenaire extends Component
         $record->update($valider);
         $record->update($valider);
         if (!empty($this->photo)) {
-            $this->photo->storeAs('public/actus', $this->selectedId.'.png');
+            $this->photo->storeAs('public/partenaires', $this->selectedId.'.png');
         }
     }
     
@@ -72,6 +74,6 @@ class VPartenaire extends Component
         ]);
         $record=partenaire::find($this->selectedId);
         $record->delete($valider);
-        Storage::delete('public/actus/'.$this->selectedId.'.png');
+        Storage::delete('public/partenaires/'.$this->selectedId.'.png');
     }
 }

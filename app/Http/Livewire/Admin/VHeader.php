@@ -29,7 +29,9 @@ class VHeader extends Component
             'Descrip'=> 'required',
         ]);
         $record = header::create($valider);
-        $this->photo->storeAs('public/headers', $record->id.'.png');
+        if(!empty($this->photo)){
+            $this->photo->storeAs('public/headers', $record->id.'.png');
+        }
         $this->clear();
     }
 
@@ -73,6 +75,7 @@ class VHeader extends Component
         ]);
         $record=header::find($this->selectedId);
         $record->delete($valider);
+        //Storage::exists("public/apropos/".$aprop->id.".png")
         Storage::delete('public/headers/'.$this->selectedId.'.png');
     }
     

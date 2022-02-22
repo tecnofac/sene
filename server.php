@@ -1,5 +1,5 @@
 <?php
-
+/* /public/storage pour git ignore */
 /**
  * Laravel - A PHP Framework For Web Artisans
  *

@@ -1,4 +1,4 @@
-<div class="row container pt-2">
+<div class="container pt-2 row">
     {{-- The whole world belongs to you. --}}
     <div class="col-lg-4 border-end border-secondary-opacity-2">
         <div class="mb-3">
@@ -33,14 +33,14 @@
         </div>
     </div>
     <div class="col-lg-8">
-        <div class="row mt-5">
+        <div class="mt-5 row">
             @foreach($projets as $pro)
-            <div class="card col-lg-4">
+            <div class="card col-lg-4" wire:click="selection({{$pro}})">
                 <div class="card-body ">
                     <h5 class="card-title text-decoration-underline">{{$pro->titre}}</h5>
                     <h6 class="card-text text-decoration-underline">{{$pro->sousTitre}}</h6>
-                    @if(Storage::exists("public/outils/".$pro->id.".png"))
-                    <img src="{{asset('storage/outils/'.$pro->id.'.png')}} alt="img" class=" border-bottom border-decondary-opacity-2 w-100">
+                    @if(Storage::exists("public/projets/".$pro->id.".png"))
+                    <img src="{{asset('storage/projets/'.$pro->id.'.png')}}?{{rand()}}" alt="img" class=" border-bottom border-decondary-opacity-2 w-100">
                     @endif
                     <p class="card-text">{{$pro->description}}</p>
                 </div>

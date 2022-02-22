@@ -1,6 +1,6 @@
-<div class="row container pt-2">
+<div class="container pt-2 row">
     {{-- If you look to others for fulfillment, you will never truly be fulfilled. --}}
-    <div class="col-lg-4 border-end border-secondary-opacity-2 p-2">
+    <div class="p-2 col-lg-4 border-end border-secondary-opacity-2">
         <div class="mb-3">
             <label for="nom" class="form-label">Nom</label>
             <input type="text" class="form-control" id="nom" aria-describedby="textHelp" wire:model="nom">
@@ -25,10 +25,10 @@
     <div class="col-lg-8">
         <div class="row">
             @foreach ($lienss as $lien)
-            <div class="col-lg-4" wire:click="selection({{$lien}})">
-                <div class="border-end border-bottom border-secondary-opacity-2 py-3 text-secondary">
+            <div class="col-lg-4 " wire:click="selection({{$lien}})">
+                <div class="px-2 py-3 border border-secondary-opacity-2 text-secondary">
                     <h5>{{$lien->nom}}</h5>
-                    <a href="#">{{$lien->url}}</a>
+                    <a href="#" class="text-truncate w-100 col-12">{{$lien->url}}</a>
                 </div>
             </div>
             @endforeach

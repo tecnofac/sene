@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" id="Partenaires">
     {{-- Care about people's approval and you will be their prisoner. --}}
     <div class="py-5 bg-light">
         <div class="">
@@ -7,7 +7,7 @@
                 @foreach ($partenaires as $pt)    
                 <a href="#" class = "mb-5 col-lg-3 col-md-3 col-sm-6 text-decoration-none text-secondary">
                     <div class="shadow card-b w-100">
-                        <img src = "{{ asset('img/partenaires/client'.($loop->index + 1).'.png') }}" class="w-100 rounded-3">
+                        <img src = "{{ asset('storage/partenaires/'.$pt->id.'.png') }}" class="w-100 rounded-3">
                         
                     </div>
                 </a>

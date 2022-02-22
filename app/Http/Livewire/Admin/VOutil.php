@@ -32,7 +32,9 @@ class VOutil extends Component
         ]);
 
         $record = outil::create($valider);
-        $this->photo->storeAs('public/outil', $record->id.'.png');
+        if(!empty($this->photo)){
+            $this->photo->storeAs('public/outils', $record->id.'.png');
+        }
         $this->clear();
     }
 
@@ -64,7 +66,7 @@ class VOutil extends Component
         $record->update($valider);
         $record->update($valider);
         if (!empty($this->photo)) {
-            $this->photo->storeAs('public/outil', $this->selectedId.'.png');
+            $this->photo->storeAs('public/outils', $this->selectedId.'.png');
         }
 
     }
@@ -79,6 +81,6 @@ class VOutil extends Component
         ]);
         $record = outil::find($this->selectedId);
         $record->delete();
-        Storage::delete('public/actus/'.$this->selectedId.'.png');
+        Storage::delete('public/outils/'.$this->selectedId.'.png');
     }
 }

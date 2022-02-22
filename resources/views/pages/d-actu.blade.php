@@ -6,7 +6,7 @@
         <p class="container text-white h2" {{-- style="background-color: rgba(0, 0, 0, .3)" --}}>Detail Atualité</p>
     </div>
     <div class="container">
-        <livewire:client.pages.v-d-actu />
+        <livewire:client.pages.v-d-actu ida="{{$ida}}" />
     </div>
 </div>
 @endsection

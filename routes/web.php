@@ -17,8 +17,8 @@ Route::get('/', function () {
     return view('pages.welcome');
 })->name('home');
 
-Route::get('/outil', function () {
-    return view('pages.outils');
+Route::get('/outil/{id}', function ($id) {
+    return view('pages.outils', ['ido' => $id]);
 })->name('outil');
 
 Route::get('/contact', function () {
@@ -29,14 +29,20 @@ Route::get('/offre', function () {
     return view('pages.offres');
 })->name('offre');
 
-Route::get('/projet', function () {
-    return view('pages.projets');
+Route::get('/projet/{id}', function ($id) {
+    return view('pages.projets', ['idp' => $id]);
 })->name('projet');
 
 
-Route::get('/detail-actu', function () {
-    return view('pages.d-actu');
+Route::get('/detail-actu/{id}', function ($id) {
+    return view('pages.d-actu', ['ida'=>$id]);
 })->name('dact');
+
+
+Route::get('/media/{type}', function ($type) {
+    return view('pages.media', ['type'=>$type]);
+})->name('media');
+
 
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {

@@ -16,9 +16,9 @@
         {{-- <link href="{{ asset('css/skins/default.css') }}" rel="stylesheet" /> --}}
         <!-- Fav and touch icons -->
         <!-- Scripts -->
-        <link rel="stylesheet" href="{{ asset('css/font-awesome.css') }}">
+        {{-- <link rel="stylesheet" href="{{ asset('css/font-awesome.css') }}"> --}}
         <script src="{{ asset('js/app.js') }}" defer></script>
-        <script defer src="{{ asset('js/all.js') }}" i></script>
+        {{-- <script defer src="{{ asset('js/all.js') }}" i></script> --}}
         
     </head>
     <body class="overFX">
@@ -44,9 +44,9 @@
 
         <!-- Template Custom JavaScript File -->
         {{-- <script src="{{ asset('js/custom.js')  }}"></script> --}}
-        <div class="fixed-bottom">
+        <div class="p-2 btn-scroll">
 
-            <a href="#" class="bg-black scrollup"><i class="fa fa-user active"></i></a>
+            <a href="#" class="px-2 text-white bg-danger scrollup text-decoration-none"><i class="fa fa-chevron-up "></i></a>
         </div>
     </body>
 </html>

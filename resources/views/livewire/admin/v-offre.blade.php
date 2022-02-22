@@ -1,4 +1,4 @@
-<div class="row container pt-2">
+<div class="container pt-2 row">
     {{-- The Master doesn't talk, he acts. --}}
     <div class="col-lg-4 border-end border-secondary-opacity-2">
         <div class="mb-3">
@@ -27,16 +27,16 @@
     <div class="col-lg-8">
         <div class="row">
             @foreach($offres as $off)
-            <div class="col-lg-4">
+            <div class="col-lg-4" wire:click="selection({{$off}})">
                 <div class="card ">
                     <div class="card-body ">
                     <h5 class="card-title text-decoration-underline">{{$off->titre}}</h5>
                         <p class="card-text">{{$off->description}}</p>
-                        <a href="#">0893000000 <br> Glodinsaudi@gmail.com</a>
+                        <a href="#">{{$off->contacts}} <br> Glodinsaudi@gmail.com</a>
                     </div>
                 </div>
             </div>
-            @endforeach
+            @endforeach            
         </div>
     </div>
 </div>

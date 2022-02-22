@@ -7,9 +7,9 @@ use App\Models\liens;
 
 class VLiens extends Component
 {
-    public $selectedId=1;
-    public $nom='kkkk';
-    public $url='ppppp';
+    public $selectedId;
+    public $nom;
+    public $url;
     public $lienss;
 
     public function render()

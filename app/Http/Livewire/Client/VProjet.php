@@ -4,24 +4,26 @@ namespace App\Http\Livewire\Client;
 
 use Livewire\Component;
 use App\Models\projet;
-use Illuminate\Support\Facades\Storage;
-use Livewire\WithFileUploads;
+use App\Models\Actu;
+use App\Models\liens;
 
 
 class VProjet extends Component
 {
-   
-    use WithFileUploads;
-    public $selectedId;
-    public $titre;
-    public $sousTitre;
-    public $description;
-    public $photo;
     public $projets;
-    
+    public $actus;
+    public $urls;
+    public $oneP;
+
     public function render()
     {
+        $this->actus = Actu::all();
+        $this->urls = liens::all(); 
         $this->projets = projet::all();
         return view('livewire.client.v-projet');
+    }
+
+    public function mount($idp){
+        $this->oneP = projet::find($idp);
     }
 }

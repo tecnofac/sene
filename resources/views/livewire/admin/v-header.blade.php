@@ -38,7 +38,7 @@
                 <h5 class="card-title bg-light text-decoration-underline">{{$head->titre}}</h5>
                 <div class="card-body " >
                     @if(Storage::exists("public/headers/".$head->id.".png"))
-                    <img src="{{asset('storage/headers/'.$head->id.'.png')}}"  alt="img" class="card-img-top border-bottom border-decondary-opacity-2 w-100">
+                    <img src="{{asset('storage/headers/'.$head->id.'.png')}}?{{rand()}}"  alt="img" class="card-img-top border-bottom border-decondary-opacity-2 w-100">
                     @endif
                     <p class="card-text">{{$head->Descrip}}</p>
                 </div>

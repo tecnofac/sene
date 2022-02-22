@@ -33,7 +33,9 @@ class VProjet extends Component
         ]);
 
         $record = projet::create($valider);
-        $this->photo->storeAs('public/actus/', $record->id.'.png');
+        if(!empty($this->photo)){
+            $this->photo->storeAs('public/projets/', $record->id.'.png');
+        }
         $this->clear();
     }
 
@@ -63,9 +65,9 @@ class VProjet extends Component
 
         $record=projet::find($this->selectedId);
         $record->update($valider);
-        $record->update($valider);
+        
         if (!empty($this->photo)) {
-            $this->photo->storeAs('public/actus/', $this->selectedId.'.png');
+            $this->photo->storeAs('public/projets', $this->selectedId.'.png');
         }
 
     }
@@ -80,6 +82,6 @@ class VProjet extends Component
         ]);
         $record = projet::find($this->selectedId);
         $record->delete();
-        Storage::delete('public/actus/'.$this->selectedId.'.png');
+        Storage::delete('public/projets'.$this->selectedId.'.png');
     }
 }

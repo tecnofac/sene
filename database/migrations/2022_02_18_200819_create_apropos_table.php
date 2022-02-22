@@ -16,7 +16,7 @@ class CreateAproposTable extends Migration
         Schema::create('apropos', function (Blueprint $table) {
             $table->id();
             $table->string('titre');
-            $table->string('description');
+            $table->text('description');
             $table->timestamps();
         });
     }
