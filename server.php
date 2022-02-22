@@ -1,5 +1,9 @@
 <?php
-/* /public/storage pour git ignore */
+/* 
+/pour git ignore et
+    public/storage 
+    /storage/*.key
+ */
 /**
  * Laravel - A PHP Framework For Web Artisans
  *
