@@ -1,6 +1,6 @@
 <div>
     <div class="row">
-        <div class="py-5 col-8">
+        <div class="py-5 col-lg-8">
             <div class="shadow card w-100" style="width: 18rem;">
                 <img src="{{ asset('storage/outils/'.$oneP->id.'.png') }}" class="card-img-top" alt="...">
                 <div class="card-img-overlay">
@@ -16,7 +16,7 @@
                 </div>
             </div>
         </div>
-        <div class="py-5 col-4">
+        <div class="py-5 col-lg-4">
             {{-- Actualites --}}
             {{-- Actualites --}}
             <h3>Dernières Actualités</h3>

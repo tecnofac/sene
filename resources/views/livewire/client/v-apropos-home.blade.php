@@ -16,7 +16,7 @@
                                     <p class="card-text" style="text-align:justify">
                                         {{$apropos[1]->description}}
                                     </p>
-                                    <a class="card-text" href="#"><small class="text-muted">Lire la suite</small></a>
+                                    <a class="card-text" href="{{ route('dap') }}"><small class="text-muted">Lire la suite</small></a>
                                 </div>
                                 <hr>
                                 <div class="card-body">
@@ -24,7 +24,7 @@
                                     <p class="card-text ">
                                         {{$apropos[2]->description}}
                                     </p>
-                                    <a class="card-text" href="#"><small class="text-muted">Lire la suite</small></a>
+                                    <a class="card-text" href="{{ route('dap') }}"><small class="text-muted">Lire la suite</small></a>
                                 </div>
                             </div>
                         </div>

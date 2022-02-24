@@ -38,6 +38,9 @@ Route::get('/detail-actu/{id}', function ($id) {
     return view('pages.d-actu', ['ida'=>$id]);
 })->name('dact');
 
+Route::get('/detail-apropos', function () {
+    return view('pages.d-apropos');
+})->name('dap');
 
 Route::get('/media/{type}', function ($type) {
     return view('pages.media', ['type'=>$type]);

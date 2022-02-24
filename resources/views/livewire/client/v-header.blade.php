@@ -51,7 +51,7 @@
     <div class="header-h2" style="background-image:url({{asset('storage/headers/'.$headers[0]->id.'.png')}}?{{rand()}})" data-bs-interval="10000">
         <!--  <img src="images/1.jpg" alt="" class="d-block w-100 header-h"> -->
         <div class=" row" style="background-color: rgba(0,0,0,.5)">
-            <video class="video col-lg-6 col-12" autoplay loop style="opacity:.3" muted>
+            <video class="video col-lg-4 col-12 offset-lg-1" autoplay loop style="opacity:.3" muted>
                 <source src="{{ asset('video/22.mp4') }}" type="video/mp4">
                 Your browser does not support the video tag.
             </video>

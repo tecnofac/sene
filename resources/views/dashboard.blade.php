@@ -10,83 +10,39 @@
                     else this.option[index] = true
                 }
                 console.log(this.option)
-            }
+            },
+            menu : [
+                'Actualités',
+                'A propos',
+                'Messages',
+                'Header',
+                'Contacts',
+                'Liens',
+                'Offres',
+                'Outils',
+                'Partenaire',
+                'Projet',
+                'Reseaux'
+            ]
         }
     ">
-        <div class="col-lg-2 pt-4 pb-4 border-end border-2 border-secondary p-0" x-show="sidenav">
+        <div class="py-5 col-lg-2 bg-primary" x-show="sidenav" style="height:100vh;">
             <img src="{{asset('img/logo.jpg')}}" alt="" class="offset-lg-4 col-lg-5">
-            <div class="">
-                <a @click="activer(0)" href="#" class="list-group-item list-group-item-action text-decoration-none text-dark fs-5 d-flex justify-content-between align-items-center ">
-                    Actualités
-                    <span class="badge  rounded-pill text-dark">
-                        <i class="fa fa-angle-right"></i>
-                    </span> 
-                </a>
-                <a @click="activer(1)" href="#" class="list-group-item  list-group-item-action text-decoration-none text-dark fs-5 d-flex justify-content-between align-items-center">
-                    A propos
-                    <span class="badge  rounded-pill text-dark">
-                        <i class="fa fa-angle-right"></i>
-                    </span> 
-                </a>
-                <a @click="activer(2)" href="#" class="list-group-item list-group-item-action text-decoration-none text-dark fs-5 d-flex justify-content-between align-items-center">
-                    Messages
-                    <span class="badge  rounded-pill text-dark">
-                        <i class="fa fa-angle-right"></i>
-                    </span> 
-                </a>
-                <a @click="activer(3)" href="#" class="list-group-item list-group-item-action text-decoration-none text-dark fs-5 d-flex justify-content-between align-items-center">
-                    Header
-                    <span class="badge  rounded-pill text-dark">
-                        <i class="fa fa-angle-right"></i>
-                    </span> 
-                </a>
-                <a @click="activer(4)" href="#" class="list-group-item list-group-item-action text-decoration-none text-dark fs-5 d-flex justify-content-between align-items-center">
-                    Contacts
-                    <span class="badge  rounded-pill text-dark">
-                        <i class="fa fa-angle-right"></i>
-                    </span> 
-                </a>
-                <a @click="activer(5)" href="#" class="list-group-item list-group-item-action text-decoration-none text-dark fs-5 d-flex justify-content-between align-items-center">
-                    Liens
-                    <span class="badge  rounded-pill text-dark">
-                        <i class="fa fa-angle-right"></i>
-                    </span> 
-                </a>
-                <a @click="activer(6)" href="#" class="list-group-item list-group-item-action text-decoration-none text-dark fs-5 d-flex justify-content-between align-items-center">
-                    Offres
-                    <span class="badge  rounded-pill text-dark">
-                        <i class="fa fa-angle-right"></i>
-                    </span> 
-                </a>
-                <a @click="activer(7)" href="#" class="list-group-item list-group-item-action text-decoration-none text-dark fs-5 d-flex justify-content-between align-items-center">
-                    Outils
-                    <span class="badge  rounded-pill text-dark">
-                        <i class="fa fa-angle-right"></i>
-                    </span> 
-                </a>
-                <a @click="activer(8)" href="#" class="list-group-item list-group-item-action text-decoration-none text-dark fs-5 d-flex justify-content-between align-items-center">
-                    Partenaire
-                    <span class="badge  rounded-pill text-dark">
-                        <i class="fa fa-angle-right"></i>
-                    </span> 
-                </a>
-                <a @click="activer(9)" href="#" class="list-group-item list-group-item-action text-decoration-none text-dark fs-5 d-flex justify-content-between align-items-center">
-                    Projet
-                    <span class="badge  rounded-pill text-dark">
-                        <i class="fa fa-angle-right"></i>
-                    </span> 
-                </a>
-                <a @click="activer(10)" href="#" class="list-group-item list-group-item-action text-decoration-none text-dark fs-5 d-flex justify-content-between align-items-center">
-                    Reseaux
-                    <span class="badge  rounded-pill text-dark">
-                        <i class="fa fa-angle-right"></i>
-                    </span> 
-                </a>
+            
+            <div class="py-5 ps-3">
+                <template class="" x-for="(m, index) in menu">
+                    <a @click="activer(index)" href="#" class=" text-decoration-none text-dark fs-2 d-flex justify-content-between align-items-center border-bottom">
+                        <span x-text="m" class="text-white"></span>
+                        <span class="text-white badge rounded-pill">
+                            <i class="fa fa-angle-right"></i>
+                        </span> 
+                    </a>
+                </template>
             </div>
         </div>
         <div class="col-lg-10">
             <div class="row">
-                <div class="col-12 p-0">
+                <div class="p-0 col-12">
                      @livewire('navigation-menu')
 
                 </div>

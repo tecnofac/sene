@@ -1,26 +1,40 @@
-<div>
-    <div class="row">
-        <div class="py-5 col-lg-8">
-            <div class="shadow card w-100" style="width: 18rem;">
-                <img src="{{ asset('storage/outils/'.$oneO->id.'.png') }}" class="card-img-top" alt="...">
-                <div class="card-img-overlay">
-                    <h5 class="px-1 py-2 text-white card-title" style="background-color: rgba(0, 0, 0, 0.753)">{{$oneO->titre}}</h5>
-                </div>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item h3"><b>{{$oneO->sousTitre}}</b></li>
-                </ul>
-                <div class="card-body">
-                    <p class="card-text">
-                        {{ $oneO->description }}
-                    </p>
+<div class="">
+    <div class="py-5 row">
+        <div class="col-lg-8">
+            <div class="row">
+                
+                <div class="col-lg-12">
+                    <div class="p-5 card">
+                        <img src="{{ asset('storage/apropos/'.$apropos[0]->id.'.png') }}" alt="" class="appr h-100 w-100" >
+                        <div class="card-footer text-muted">
+                            <h2>{{$apropos[0]->titre}} : {{$apropos[0]->description}}</h2>
+                        </div>
+                    </div>
                 </div>
             </div>
+            @foreach ($apropos as $apr)
+            @if ($loop->index != 0)
+                
+            <div class="mt-5 row">
+                    
+                <div class="col-lg-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="px-1 py-2 text-white bg-primary">{{$apr->titre}}</h5>
+                            <p class="card-text" style="text-align:justify">
+                                {{$apr->description}}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @endif
+            @endforeach
         </div>
-        <div class="py-5 col-lg-4">
+        <div class=" col-lg-4">
             {{-- Actualites --}}
             <h3>Dernières Actualités</h3>
-            @foreach ($actus as $act)  
-            @if ($oneO->id != $act->id)      
+            @foreach ($actus as $act)      
             <a class="row text-decoration-none text-secondary" href="{{route('dact', $act->id)}}" >
                 <div class="col-3">
                     <img src="{{ asset('storage/actus/'.$act->id.'.png') }}" alt="" class="w-100">
@@ -32,7 +46,6 @@
                     </p>
                 </div>
             </a>
-            @endif
             @endforeach
             <hr>
             {{-- Liens --}}

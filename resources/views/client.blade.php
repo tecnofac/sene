@@ -17,6 +17,7 @@
         <!-- Fav and touch icons -->
         <!-- Scripts -->
         {{-- <link rel="stylesheet" href="{{ asset('css/font-awesome.css') }}"> --}}
+        @livewireStyles
         <script src="{{ asset('js/app.js') }}" defer></script>
         {{-- <script defer src="{{ asset('js/all.js') }}" i></script> --}}
         
@@ -48,10 +49,11 @@
 
             <a href="#" class="px-2 text-white bg-danger scrollup text-decoration-none"><i class="fa fa-chevron-up "></i></a>
         </div>
-        <a href="http://free-website-translation.com/?fr" id="ftwtranslation_button" hreflang="fr" title="" style="border:0;">
+        {{-- <a href="http://free-website-translation.com/?fr" id="ftwtranslation_button" hreflang="fr" title="" style="border:0;">
             <img src="http://free-website-translation.com/img/fwt_button_en.gif" id="ftwtranslation_image" alt="Outil de traduction gratuite de site Internet" style="border:0;"/>
         </a><br />
         <a href="http://free-website-translation.com/?fr" style="font-size:10px;font-family:verdana;color:#000;margin:2px 4px;margin-top:0;">by FreeWebsiteTranslation.com</a>
-        <script type="text/javascript" src="http://free-website-translation.com/scripts/fwt.js"></script>
+        <script type="text/javascript" src="http://free-website-translation.com/scripts/fwt.js"></script> --}}
+        @livewireScripts
     </body>
 </html>
