@@ -26,6 +26,7 @@ class VLiens extends Component
         ]);
         liens::create($valider);
         $this->clear();
+        $this->dispatchBrowserEvent('notify', ['titre' => 'Confirmation','message' => 'Enregistrement effectué', 'type' => 'success']);
     }
 
     public function clear()
@@ -52,6 +53,7 @@ class VLiens extends Component
         ]);
         $record=liens::find($this->selectedId);
         $record->update($valider);
+        $this->dispatchBrowserEvent('notify', ['titre' => 'Confirmation','message' => 'Modification effectuée', 'type' => 'success']);
     }
     
     public function delete()
@@ -62,5 +64,6 @@ class VLiens extends Component
         ]);
         $record=liens::find($this->selectedId);
         $record->delete($valider);
+        $this->dispatchBrowserEvent('notify', ['titre' => 'Confirmation','message' => 'Suppression effectuée', 'type' => 'success']);
     }
 }

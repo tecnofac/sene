@@ -1,4 +1,5 @@
 <div class="container pt-3">
+    <x-notification />
     {{-- Knowing others is intelligence; knowing yourself is true wisdom. --}}
     <div class="row">
         <div class="col-lg-4 border-end border-secondary-opacity-2">

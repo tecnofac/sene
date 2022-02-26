@@ -1,4 +1,5 @@
 <div class="container pt-2 row">
+    <x-notification />
     {{-- If you look to others for fulfillment, you will never truly be fulfilled. --}}
     <div class="p-2 col-lg-4 border-end border-secondary-opacity-2">
         <div class="mb-3">

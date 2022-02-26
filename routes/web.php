@@ -42,6 +42,10 @@ Route::get('/detail-apropos', function () {
     return view('pages.d-apropos');
 })->name('dap');
 
+Route::get('/type-part/{type}', function ($type) {
+    return view('pages.partenaire', ['type' => $type]);
+})->name('ty_part');
+
 Route::get('/media/{type}', function ($type) {
     return view('pages.media', ['type'=>$type]);
 })->name('media');

@@ -1,4 +1,5 @@
 <div class="container pt-2 row">
+    <x-notification />
     {{-- The whole world belongs to you. --}}
     <div class="col-lg-4 border-end border-secondary-opacity-2">
         <div class="mb-3">

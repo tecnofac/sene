@@ -20,7 +20,7 @@
                 <div class="col-lg-12">
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="px-1 py-2 text-white bg-primary">{{$apr->titre}}</h5>
+                            <h5 class="px-1 py-2 text-dark bg-light">{{$apr->titre}}</h5>
                             <p class="card-text" style="text-align:justify">
                                 {{$apr->description}}
                             </p>

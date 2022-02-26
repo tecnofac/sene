@@ -1,4 +1,5 @@
 <div class="pt-2 container-fluid row">
+    <x-notification />
     {{-- If your happiness depends on money, you will never be happy with yourself. --}}
     <div class="col-lg-3 border-end border-secondary-opacity-2">
         <div class="mb-3">

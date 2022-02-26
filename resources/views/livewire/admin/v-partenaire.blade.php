@@ -1,5 +1,6 @@
 
     <div class="container pt-2">
+        <x-notification />
         {{-- If you look to others for fulfillment, you will never truly be fulfilled. --}}
         <div class="row">
             <div class="col-lg-4 border-end border-secondary-opacity-2">
@@ -11,6 +12,21 @@
                     <div class="mb-3">
                         <label for="url" class="form-label">Liens</label>
                         <input type="url" class="form-control" id="url" aria-describedby="textHelp" wire:model="url">
+                        <div class="form-text" id="textHelp">Veillez bien saisir vos liens ici</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="type" class="form-label">Type/Catagorie</label>
+                        <select type="text" class="form-control" id="type" aria-describedby="textHelp" wire:model="type">
+                            <option >Choisir un type/Categorie</option>
+                            <option value="0">Simple</option>
+                            <option value="1">Operationel</option>
+                            <option value="2">Strategique</option>
+                        </select>
+                        <div class="form-text" id="textHelp">Veillez bien saisir vos liens ici</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="des" class="form-label">Description</label>
+                        <textarea type="text" class="form-control" id="des" aria-describedby="textHelp" wire:model="descrip"></textarea>
                         <div class="form-text" id="textHelp">Veillez bien saisir vos liens ici</div>
                     </div>
                     <div class="mb-3">

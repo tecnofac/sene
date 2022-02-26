@@ -6,6 +6,7 @@
 
         <title>{{ config('app.name', 'Laravel') }}</title>
         <!-- Styles -->
+        @livewireStyles
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
         <link href="{{ asset('css/index.css') }}" rel="stylesheet">
         {{-- <link href="{{ asset('css/fancybox/jquery.fancybox.css') }}" rel="stylesheet">
@@ -17,8 +18,8 @@
         <!-- Fav and touch icons -->
         <!-- Scripts -->
         {{-- <link rel="stylesheet" href="{{ asset('css/font-awesome.css') }}"> --}}
-        @livewireStyles
-        <script src="{{ asset('js/app.js') }}" defer></script>
+        
+        
         {{-- <script defer src="{{ asset('js/all.js') }}" i></script> --}}
         
     </head>
@@ -55,5 +56,6 @@
         <a href="http://free-website-translation.com/?fr" style="font-size:10px;font-family:verdana;color:#000;margin:2px 4px;margin-top:0;">by FreeWebsiteTranslation.com</a>
         <script type="text/javascript" src="http://free-website-translation.com/scripts/fwt.js"></script> --}}
         @livewireScripts
+        <script src="{{ asset('js/app.js') }}" defer></script>
     </body>
 </html>

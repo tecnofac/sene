@@ -26,8 +26,9 @@ class VOffre extends Component
             'contacts'=>'required'
         ]);
     
-            Offre::create($valider);
-            $this->clear();
+        Offre::create($valider);
+        $this->clear();
+        $this->dispatchBrowserEvent('notify', ['titre' => 'Confirmation','message' => 'Enregistrement effectué', 'type' => 'success']);
     }
 
     public function clear()
@@ -56,6 +57,7 @@ class VOffre extends Component
     
         $record=Offre::find($this->selectedId);
         $record->update($valider);
+        $this->dispatchBrowserEvent('notify', ['titre' => 'Confirmation','message' => 'Modification effectuée', 'type' => 'success']);
     }
         
     
@@ -68,5 +70,6 @@ class VOffre extends Component
         ]);
         $record = Offre::find($this->selectedId);
         $record->delete();
+        $this->dispatchBrowserEvent('notify', ['titre' => 'Confirmation','message' => 'Suppression effectuée', 'type' => 'success']);
     }
 }

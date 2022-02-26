@@ -32,7 +32,7 @@ class VReseauxSociaux extends Component
         ]);
 
         reseaux::create($valider);
-        
+        $this->clear();
     }
 
     public function clear()
@@ -65,6 +65,8 @@ class VReseauxSociaux extends Component
         ]);
         $record=reseaux::find($this->selectedId);
         $record->update($valider);
+        $this->clear();
+        $this->dispatchBrowserEvent('notify', ['titre' => 'Confirmation','message' => 'Modification effectuée', 'type' => 'success']);
     }
     
     public function delete()
@@ -77,5 +79,7 @@ class VReseauxSociaux extends Component
         ]);
         $record=reseaux::find($this->selectedId);
         $record->delete($valider);
+        $this->clear();
+        $this->dispatchBrowserEvent('notify', ['titre' => 'Confirmation','message' => 'Suppression effectuée', 'type' => 'success']);
     }
 }

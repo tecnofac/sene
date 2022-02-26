@@ -103,7 +103,7 @@
   }
   .frame img {
     width: 300px;
-    height: 300px;
+    
   }
   .frame .details {
     /* width: 70%; */
@@ -148,4 +148,40 @@
     top:0;
 
     
+}
+
+.nav-link:hover{
+    transition-property: all;
+    transition-duration: 0.2s;
+    border-bottom: solid 3px #009ce8;
+}
+
+.nav-link{
+    border-bottom: solid 3px white;
+}
+
+.transition{
+    transition-property: all;
+}
+.duration-300{
+    transition-duration:300ms;
+}
+
+.opacity-0{
+    opacity: 0;
+}
+
+.scale-90{
+    transform: scale(.9);
+}
+.opacity-100{
+    opacity: 1;
+} 
+.scale-100{
+    transform: scale(1);
+}
+
+.t-alert{
+    top: 15%;
+    right: 15%;
 }

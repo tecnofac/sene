@@ -22,8 +22,7 @@ class VPrendreContact extends Component
     }
 
     public function create()
-    {
-       
+    {       
         $valider = $this->validate([
             'nom'=> 'required',
             'email'=> 'required',
@@ -32,6 +31,17 @@ class VPrendreContact extends Component
         ]);
         
         messages::create($valider);
+        $this->clear();
+        $this->dispatchBrowserEvent('notify', ['titre' => 'Confirmation','message' => 'Nous avons reçu votre message', 'type' => 'success']);
+    }
+
+    public function clear()
+    {
+        $this->nom = "";
+        $this->email = "";
+        $this->sujet = "";
+        $this->contenu = "";
+        
     }
 
     ## la fonction modifier ##

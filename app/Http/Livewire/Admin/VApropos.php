@@ -34,6 +34,7 @@ class VApropos extends Component
             $this->photo->storeAs('public/apropos', $record->id.'.png');
         }
         $this->clear();
+        $this->dispatchBrowserEvent('notify', ['titre' => 'Confirmation','message' => 'Enregistrement effectué', 'type' => 'success']);
     }
     public function clear()
     {
@@ -63,7 +64,7 @@ class VApropos extends Component
         if (!empty($this->photo)) {
             $this->photo->storeAs('public/apropos', $this->selectedId.'.png');
         }
-
+        $this->dispatchBrowserEvent('notify', ['titre' => 'Confirmation','message' => 'Modification effectuée', 'type' => 'success']);
     }
     
     public function delete()
@@ -75,6 +76,7 @@ class VApropos extends Component
         $record = apropo::find($this->selectedId);
         $record->delete();
         Storage::delete('public/apropos/'.$this->selectedId.'.png');
+        $this->dispatchBrowserEvent('notify', ['titre' => 'Confirmation','message' => 'Suppression effectuée', 'type' => 'success']);
     }
 
 }

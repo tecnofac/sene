@@ -36,6 +36,7 @@ class VOutil extends Component
             $this->photo->storeAs('public/outils', $record->id.'.png');
         }
         $this->clear();
+        $this->dispatchBrowserEvent('notify', ['titre' => 'Confirmation','message' => 'Enregistrement effectué', 'type' => 'success']);
     }
 
     public function clear()
@@ -68,7 +69,7 @@ class VOutil extends Component
         if (!empty($this->photo)) {
             $this->photo->storeAs('public/outils', $this->selectedId.'.png');
         }
-
+        $this->dispatchBrowserEvent('notify', ['titre' => 'Confirmation','message' => 'Modification effectuée', 'type' => 'success']);
     }
     
     public function delete()
@@ -82,5 +83,6 @@ class VOutil extends Component
         $record = outil::find($this->selectedId);
         $record->delete();
         Storage::delete('public/outils/'.$this->selectedId.'.png');
+        $this->dispatchBrowserEvent('notify', ['titre' => 'Confirmation','message' => 'Suppression effectuée', 'type' => 'success']);
     }
 }

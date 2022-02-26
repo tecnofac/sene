@@ -1,4 +1,5 @@
 <div class="container-fluid">
+    <x-notification />
     {{-- To attain knowledge, add things every day; To attain wisdom, subtract things every day. --}}
     <div class="row">
         <div class="col-lg-4 border-end border-secondary-opacity-2">

@@ -1,5 +1,6 @@
 <div class="container-fluid">
     {{-- Stop trying to control. --}}
+    <x-notification />
     <div class="row">
         <div class="col-lg-3 border-end border-secondary-opacity-2">
             <div>

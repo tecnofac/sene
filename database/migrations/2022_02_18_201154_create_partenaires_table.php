@@ -17,6 +17,8 @@ class CreatePartenairesTable extends Migration
             $table->id();
             $table->string('nom');
             $table->string('url');
+            $table->string('type');
+            $table->text('descrip');
             $table->timestamps();
         });
     }

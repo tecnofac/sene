@@ -38,6 +38,7 @@ class VActu extends Component
         $record = Actu::create($valider);
         $this->photo->storeAs('public/actus', $record->id.'.png');
         $this->clear();
+        $this->dispatchBrowserEvent('notify', ['titre' => 'Confirmation','message' => 'Enregistrement effectué', 'type' => 'success']);
     }
 
     public function clear()
@@ -75,6 +76,7 @@ class VActu extends Component
         if (!empty($this->photo)) {
             $this->photo->storeAs('public/actus', $this->selectedId.'.png');
         }
+        $this->dispatchBrowserEvent('notify', ['titre' => 'Confirmation','message' => 'Modification effectuée', 'type' => 'success']);
 
     }
 
@@ -91,6 +93,7 @@ class VActu extends Component
         $record = Actu::find($this->selectedId);
         $record->delete();
         Storage::delete('public/actus/'.$this->selectedId.'.png');
+        $this->dispatchBrowserEvent('notify', ['titre' => 'Confirmation','message' => 'Suppression effectuée', 'type' => 'success']);
     }
 
     

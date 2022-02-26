@@ -3,7 +3,7 @@
     <footer>
         <div class="container py-5">
           <div class="row">
-            <div class="col-md-3 ">
+            <div class="col-md-3">
               <div class="">
                 <h5 class="">CONTACTS</h5>
                 <div class="text-white">

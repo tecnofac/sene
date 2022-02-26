@@ -37,6 +37,7 @@ class VProjet extends Component
             $this->photo->storeAs('public/projets/', $record->id.'.png');
         }
         $this->clear();
+        $this->dispatchBrowserEvent('notify', ['titre' => 'Confirmation','message' => 'Enregistrement effectué', 'type' => 'success']);
     }
 
     public function clear()
@@ -69,7 +70,7 @@ class VProjet extends Component
         if (!empty($this->photo)) {
             $this->photo->storeAs('public/projets', $this->selectedId.'.png');
         }
-
+        $this->dispatchBrowserEvent('notify', ['titre' => 'Confirmation','message' => 'Modification effectuée', 'type' => 'success']);
     }
     
     public function delete()
@@ -83,5 +84,6 @@ class VProjet extends Component
         $record = projet::find($this->selectedId);
         $record->delete();
         Storage::delete('public/projets'.$this->selectedId.'.png');
+        $this->dispatchBrowserEvent('notify', ['titre' => 'Confirmation','message' => 'Suppression effectuée', 'type' => 'success']);
     }
 }

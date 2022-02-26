@@ -16,10 +16,18 @@
             </div>
         </div>
     </nav> --}}
-    <nav class="px-2 bg-white navbar navbar-light navbar-expand-lg" >
-        <div class="container py-4 ">
-            <a class="navbar-brand col-12 col-lg-2 d-flex justify-content-center" href="{{ route('home') }}">
-                <img src="{{ asset('img/logo.jpg') }}" alt="" srcset="" style="width:200px">
+    <nav class="p-0 bg-white p navbar navbar-light navbar-expand-lg" >
+        <div class="container">
+            <a class="p-0 navbar-brand col-12 col-lg-3 d-flex align-items-center" href="{{ route('home') }}">
+                <img src="{{ asset('img/logo.png') }}" alt="" srcset="" style="height:90px;">
+                <div class="d-flex justify-content-center align-items-center" >
+                    <p class="text-center flex-column d-flex">
+                        <b class="fs-3" style="color:#009ce8">SENAREC</b> <br>
+                        <span class="fs-6 fw-bold" style="">SECRETARIAT NATIONAL POUR </span>
+                        <span class="fs-6" style="">LE RENFORCEMENT DES CAPACITES</span>
+                    </p>
+                    
+                </div>
             </a>
             <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="navbarnavDropdown" aria-expanded="false" >
                 <span class="navbar-toggler-icon"></span>
@@ -50,12 +58,19 @@
                             @endforeach
                         </ul>
                     </li>
-                    <li class="px-2 nav-item">
-                        <a href="{{route('home', '#Partenaires')}}" class="nav-link">Partenaires</a>
+                    <li class="px-2 nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" id="par" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Partenaires
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="par">
+                            <li><a href="{{ route('ty_part', 1) }}" class="dropdown-item h5">Partenaires Operationels</a></li>
+                            <li><a href="{{ route('ty_part', 2) }}" class="dropdown-item h5">Partenaires strategiques</a></li>
+                        </ul>
                     </li>
                     
                     <li class="px-2 nav-item">
                         <a href="{{route('home', '#Actus')}}" class="nav-link">Actualités</a>
+                        
                     </li>
                     <li class="px-2 nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" id="offres" role="button" data-bs-toggle="dropdown" aria-expanded="false">

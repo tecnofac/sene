@@ -33,6 +33,7 @@ class VHeader extends Component
             $this->photo->storeAs('public/headers', $record->id.'.png');
         }
         $this->clear();
+        $this->dispatchBrowserEvent('notify', ['titre' => 'Confirmation','message' => 'Enregistrement effectué', 'type' => 'success']);
     }
 
     public function clear()
@@ -64,7 +65,7 @@ class VHeader extends Component
         if (!empty($this->photo)) {
             $this->photo->storeAs('public/headers', $this->selectedId.'.png');
         }
-
+        $this->dispatchBrowserEvent('notify', ['titre' => 'Confirmation','message' => 'Modification effectuée', 'type' => 'success']);
     }
     
     public function delete()
@@ -77,6 +78,7 @@ class VHeader extends Component
         $record->delete($valider);
         //Storage::exists("public/apropos/".$aprop->id.".png")
         Storage::delete('public/headers/'.$this->selectedId.'.png');
+        $this->dispatchBrowserEvent('notify', ['titre' => 'Confirmation','message' => 'Suppression effectuée', 'type' => 'success']);
     }
     
     

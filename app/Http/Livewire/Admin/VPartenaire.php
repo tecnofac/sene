@@ -14,6 +14,8 @@ class VPartenaire extends Component
     public $selectedId;
     public $nom;
     public $url;
+    public $descrip = "";
+    public $type;
     public $photo;
     public $partenaires;
     
@@ -27,18 +29,23 @@ class VPartenaire extends Component
         $valider = $this->validate([
             'nom'=> 'required',
             'url'=>'required',
+            'type'=>'required',
+            'descrip'=>'required',
         ]);
         $record = partenaire::create($valider);
         if(!empty($this->photo)){
             $this->photo->storeAs('public/partenaires', $record->id.'.png');
         }
         $this->clear();
+        $this->dispatchBrowserEvent('notify', ['titre' => 'Confirmation','message' => 'Enregistrement effectué', 'type' => 'success']);
     }
 
     public function clear()
     {
         $this->nom = "";
         $this->url = "";
+        $this->type = "";
+        $this->descrip = "";
         $this->photo = "";
         $this->selectedId = "";
     }
@@ -48,6 +55,8 @@ class VPartenaire extends Component
         $this->selectedId = $data["id"];
         $this->nom = $data["nom"];
         $this->url = $data["url"];
+        $this->type = $data["type"];
+        $this->descrip = $data["descrip"];
     }
 
     
@@ -56,6 +65,8 @@ class VPartenaire extends Component
         $valider = $this->validate([
             'nom'=> 'required',
             'url'=>'required',
+            'type'=>'required',
+            'descrip'=>'required',
         ]);
 
         $record=partenaire::find($this->selectedId);
@@ -64,6 +75,8 @@ class VPartenaire extends Component
         if (!empty($this->photo)) {
             $this->photo->storeAs('public/partenaires', $this->selectedId.'.png');
         }
+        $this->clear();
+        $this->dispatchBrowserEvent('notify', ['titre' => 'Confirmation','message' => 'Modification effectuée', 'type' => 'success']);
     }
     
     public function delete()
@@ -71,9 +84,12 @@ class VPartenaire extends Component
         $valider = $this->validate([
             'nom'=> 'required',
             'url'=>'required',
+            'type'=>'required',
+            'descrip'=>'required',
         ]);
         $record=partenaire::find($this->selectedId);
         $record->delete($valider);
         Storage::delete('public/partenaires/'.$this->selectedId.'.png');
+        $this->dispatchBrowserEvent('notify', ['titre' => 'Confirmation','message' => 'Suppression effectué', 'type' => 'success']);
     }
 }

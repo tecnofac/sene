@@ -2,6 +2,7 @@
     {{-- If you look to others for fulfillment, you will never truly be fulfilled. --}}
     
     <div class="container py-5">
+      <x-notification />
         <div class="row g-3">
             @if ($errors->any())
             @foreach ($errors->all() as $error)

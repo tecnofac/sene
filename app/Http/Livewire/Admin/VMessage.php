@@ -25,6 +25,7 @@ class VMessage extends Component
     {
         $record = messages::find($_id);
         $record->delete();
+        $this->dispatchBrowserEvent('notify', ['titre' => 'Confirmation','message' => 'Suppresssion effectuée', 'type' => 'success']);
     }
 
     ## la fonction inserer les donnes à la base de donnée ##

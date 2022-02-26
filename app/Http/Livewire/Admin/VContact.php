@@ -29,6 +29,7 @@ class VContact extends Component
         
         Contact::create($valider);
         $this->clear();
+        $this->dispatchBrowserEvent('notify', ['titre' => 'Confirmation','message' => 'Enregistrement effectué', 'type' => 'success']);
     }
     public function clear()
     {
@@ -56,6 +57,7 @@ class VContact extends Component
         ]);
         $record=Contact::find($this->selectedId);
         $record->update($valider);
+        $this->dispatchBrowserEvent('notify', ['titre' => 'Confirmation','message' => 'Modification effectuée', 'type' => 'success']);
     }
 
     public function delete()
@@ -67,6 +69,7 @@ class VContact extends Component
         ]);
         $record = Contact::find($this->selectedId);
         $record->delete();
+        $this->dispatchBrowserEvent('notify', ['titre' => 'Confirmation','message' => 'Suppression effectuée', 'type' => 'success']);
     }
     
 }
