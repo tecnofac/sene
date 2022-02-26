@@ -68,7 +68,7 @@
               <div class="col-md-6 d-flex justify-content-end align-item-center">
                 <div class="rounded-social-buttons">
                   @foreach ($rxx as $rx)
-                  <a class="px-2 py-1 text-white bg-secondary" href="{{ $rx->url }}" target="_blank"><i class="fab fa-{{ $rx->icon }}"></i></a>
+                  <a class="px-2 py-1 text-white {{$rx->icon}}" href="{{ $rx->url }}" target="_blank"><i class="fab fa-{{ $rx->icon }}"></i></a>
                   @endforeach
                 </div>
               </div>
