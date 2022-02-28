@@ -81,14 +81,11 @@
                             <li><a href="{{ route('media', 'img') }}" class="dropdown-item h5">Photos</a></li>
                         </ul>
                     </li>
-                    <li class="px-2 nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" id="offres" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <li class="px-2 nav-item ">
+                        <a href="{{ route('offre') }}" class="nav-link" >
                             Offres
                         </a>
-                        <ul class="dropdown-menu" aria-labelledby="offres">
-                            <li><a href="{{ route('offre') }}" class="dropdown-item h5">Offres d'emplois</a></li>
-                            <li><a href="{{ route('offre') }}" class="dropdown-item h5">Appel d'offre</a></li>
-                        </ul>
+                        {{-- <a href="{{ route('offre') }}" class="dropdown-item h5">Offres d'emplois</a> --}}
                     </li>
                     <li class="px-2 nav-item">
                         <a href="{{ route('contact') }}" class="nav-link">Contact</a>
