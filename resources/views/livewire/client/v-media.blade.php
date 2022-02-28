@@ -16,7 +16,7 @@
                         <div>
                             <h1>{{$act->titre}}</h1>
                             <p class="" style="text-align:justify">
-                                {{$act->descrip}}
+                                {{-- {{$act->descrip}} --}}
                                 <b><span><i class="fas fa-plu"></i></span>Voir plus...</b>
                             </p>
                         </div>

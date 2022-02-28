@@ -17,10 +17,10 @@
         </div>
     </nav> --}}
     <nav class="p-0 bg-white p navbar navbar-light navbar-expand-lg" >
-        <div class="container">
-            <a class="p-0 navbar-brand col-12 col-lg-3 d-flex align-items-center" href="{{ route('home') }}">
-                <img src="{{ asset('img/logo.png') }}" alt="" srcset="" style="height:90px;">
-                <div class="d-flex justify-content-center align-items-center" >
+        <div class="container-fluid">
+            <a class="p-0 navbar-brand col-12 col-lg-3 align-items-center d-none d-lg-flex" href="{{ route('home') }}">
+                <img src="{{ asset('img/logo.png') }}" alt="" srcset="" style="height:90px;" class="">
+                <div class=" d-flex justify-content-center align-items-center" >
                     <p class="text-center flex-column d-flex">
                         <b class="fs-3" style="color:#009ce8">SENAREC</b> <br>
                         <span class="fs-6 fw-bold" style="">SECRETARIAT NATIONAL POUR </span>
@@ -29,7 +29,7 @@
                     
                 </div>
             </a>
-            <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="navbarnavDropdown" aria-expanded="false" >
+            <button class="my-2 navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="navbarnavDropdown" aria-expanded="false" >
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="menu">
@@ -79,6 +79,15 @@
                         <ul class="dropdown-menu" aria-labelledby="offres">
                             <li><a href="{{ route('media', 'vid') }}" class="dropdown-item h5">Videos</a></li>
                             <li><a href="{{ route('media', 'img') }}" class="dropdown-item h5">Photos</a></li>
+                        </ul>
+                    </li>
+                    <li class="px-2 nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" id="offres" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Offres
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="offres">
+                            <li><a href="{{ route('offre') }}" class="dropdown-item h5">Offres d'emplois</a></li>
+                            <li><a href="{{ route('offre') }}" class="dropdown-item h5">Appel d'offre</a></li>
                         </ul>
                     </li>
                     <li class="px-2 nav-item">

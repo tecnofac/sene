@@ -5,8 +5,8 @@
             <div class="py-5 row act " id="">
                 @foreach ($partenaires as $pt)   
                 @if ($pt->type == $typ)    
-                <div class = "mb-5 col-lg-3 col-md-2 col-sm-3 text-decoration-none text-secondary col-6">
-                    <div class="card" style="width: 18rem;">
+                <div class = "mb-5 text-decoration-none text-secondary col-lg-3">
+                    <div class="card w-100" style="width: 18rem;">
                         <img src = "{{ asset('storage/partenaires/'.$pt->id.'.png') }}" class="card-img-top">
                         <div class="card-body">
                           <h5 class="card-title">{{$pt->nom}}</h5>
